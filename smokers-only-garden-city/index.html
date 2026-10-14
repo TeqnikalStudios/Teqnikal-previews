@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Smokers Only Garden City</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;700;800&display=swap">
+<style>
+/* Layout: bold retail. Black hero, white shop floor, one red action color. Single light look by choice. */
+:root {
+  --black: #0d0d0d;
+  --white: #ffffff;
+  --gray: #f2f2f0;
+  --line: #e1e1dd;
+  --muted: #5b5b57;
+  --red: #e4002b;
+  --red-dark: #b80023;
+  --green: #12833e;
+  --display: "Anton", "Impact", "Haettenschweiler", "Arial Narrow Bold", sans-serif;
+  --body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--white); color: var(--black); font: 16px/1.5 var(--body); }
+[hidden] { display: none !important; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; text-transform: uppercase; line-height: .95; margin: 0; letter-spacing: .01em; text-wrap: balance; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 24px; border: 0; border-radius: 6px; background: var(--red); color: var(--white); font: 800 16px/1 var(--body); text-transform: uppercase; letter-spacing: .03em; text-decoration: none; cursor: pointer; }
+.btn:hover { background: var(--red-dark); }
+.btn.white { background: var(--white); color: var(--black); }
+.btn.white:hover { background: var(--gray); }
+.btn.line { background: transparent; color: var(--black); box-shadow: inset 0 0 0 2px var(--black); }
+.btn:disabled { background: #c9c9c5; color: #6b6b67; cursor: not-allowed; }
+
+.ribbon { background: #fff4c2; color: #4a3d00; font-size: 13px; text-align: center; }
+.ribbon .wrap { padding-block: 7px; }
+
+/* header */
+header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30; background: var(--black); color: var(--white); }
+header.top .wrap { display: flex; align-items: center; gap: 24px; min-height: 68px; }
+.logo { font: 400 30px/1 var(--display); text-transform: uppercase; text-decoration: none; letter-spacing: .02em; }
+.logo span { color: var(--red); }
+nav.main { display: flex; gap: 4px; margin-left: auto; }
+nav.main a { padding: 10px 14px; text-decoration: none; font-weight: 700; font-size: 15px; text-transform: uppercase; letter-spacing: .04em; border-radius: 6px; }
+nav.main a:hover { background: #262626; }
+.order-btn { min-height: 44px; padding: 0 16px; }
+.order-btn b { background: var(--white); color: var(--red); border-radius: 20px; min-width: 24px; padding: 3px 7px; font-size: 13px; }
+
+/* hero */
+.hero { background: var(--black); color: var(--white); }
+.hero .wrap { padding-block: 56px 64px; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; }
+.pill { display: inline-flex; align-items: center; gap: 8px; background: #1f1f1f; border-radius: 30px; padding: 8px 14px; font-weight: 700; font-size: 14px; }
+.pill i { width: 10px; height: 10px; border-radius: 50%; background: #3ddc75; }
+.pill.closed i { background: var(--red); }
+.hero h1 { font-size: clamp(56px, 10vw, 132px); margin: 20px 0 18px; }
+.hero h1 em { font-style: normal; color: var(--red); }
+.hero p { font-size: 19px; max-width: 40ch; color: #cfcfcb; margin: 0 0 30px; }
+.hero .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+.callcard { border: 2px solid #2b2b2b; border-radius: 10px; padding: 22px 24px; min-width: 260px; }
+.callcard small { display: block; text-transform: uppercase; letter-spacing: .1em; font-size: 12px; font-weight: 700; color: #9a9a95; margin-bottom: 6px; }
+.callcard .big { font: 400 34px/1 var(--display); letter-spacing: .02em; }
+.callcard .addr { margin-top: 16px; color: #cfcfcb; font-size: 15px; }
+
+/* facts strip */
+.facts { background: var(--red); color: var(--white); }
+.facts .wrap { display: grid; grid-template-columns: repeat(3, 1fr); }
+.fact { padding-block: 18px; padding-right: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: .03em; font-size: 15px; display: flex; align-items: center; gap: 12px; min-width: 0; }
+.fact span { font: 400 30px/1 var(--display); }
+
+section { padding-block: 72px; }
+.head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 28px; }
+.head h2 { font-size: clamp(44px, 6vw, 72px); }
+.head p { margin: 0; color: var(--muted); max-width: 44ch; }
+
+/* shop */
+.tabs { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 6px; margin-bottom: 24px; scrollbar-width: thin; }
+.tab { flex: none; border: 2px solid var(--black); background: var(--white); border-radius: 6px; padding: 10px 18px; font-weight: 800; text-transform: uppercase; font-size: 14px; letter-spacing: .03em; cursor: pointer; }
+.tab[aria-pressed="true"] { background: var(--black); color: var(--white); }
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.card { border: 2px solid var(--line); border-radius: 10px; padding: 18px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.card .cat { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.card h3 { font: 700 18px/1.25 var(--body); text-transform: none; letter-spacing: 0; }
+.card .desc { font-size: 14px; color: var(--muted); flex: 1; }
+.card .row { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 10px; }
+.card .price { font: 400 28px/1 var(--display); }
+.card .add { min-height: 42px; padding: 0 18px; font-size: 14px; }
+.card .id { font-size: 11px; font-weight: 800; color: var(--red); text-transform: uppercase; letter-spacing: .06em; }
+.note { font-size: 13px; color: var(--muted); margin-top: 16px; }
+
+/* delivery */
+.delivery { background: var(--gray); }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; list-style: none; margin: 0; padding: 0; counter-reset: s; }
+.steps li { counter-increment: s; background: var(--white); border-radius: 10px; padding: 24px; min-width: 0; }
+.steps li::before { content: counter(s); display: block; font: 400 64px/1 var(--display); color: var(--red); margin-bottom: 10px; }
+.steps h3 { font-size: 30px; margin-bottom: 8px; }
+.steps p { margin: 0; color: var(--muted); }
+.zone { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+.zone > div { background: var(--white); border-radius: 10px; padding: 24px; min-width: 0; }
+.zone h3 { font-size: 26px; margin-bottom: 12px; }
+.zips { display: flex; flex-wrap: wrap; gap: 8px; }
+.zips span { font-weight: 700; border: 2px solid var(--black); border-radius: 6px; padding: 4px 10px; font-variant-numeric: tabular-nums; }
+.zone ul { margin: 0; padding-left: 20px; color: var(--muted); }
+.zone p { margin: 12px 0 0; color: var(--muted); font-size: 14px; }
+
+/* visit */
+.visit .cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+.visit .box { border: 2px solid var(--black); border-radius: 10px; padding: 24px; min-width: 0; }
+.visit .box h3 { font-size: 26px; margin-bottom: 14px; }
+.hours { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.hours td { padding: 7px 0; border-bottom: 1px solid var(--line); }
+.hours td:last-child { text-align: right; font-weight: 700; }
+.hours tr.today td { color: var(--red); font-weight: 800; }
+.visit .big { font: 400 32px/1.05 var(--display); letter-spacing: .02em; }
+.visit p { margin: 10px 0 0; color: var(--muted); }
+.visit .btn { margin-top: 18px; }
+
+footer { background: var(--black); color: #a3a39e; font-size: 13px; }
+footer .wrap { padding-block: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
+
+/* mobile order bar */
+.bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 25; background: var(--black); padding: 10px max(16px, env(safe-area-inset-right, 0px)) calc(10px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); display: none; }
+.bar .btn { width: 100%; justify-content: space-between; }
+
+/* drawer + dialogs */
+.veil { position: fixed; inset: 0; z-index: 50; background: rgba(0,0,0,.6); }
+.drawer { position: fixed; top: 0; right: 0; bottom: 0; z-index: 51; width: min(440px, 100%); background: var(--white); display: flex; flex-direction: column; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); padding-right: env(safe-area-inset-right, 0px); }
+.drawer header { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; border-bottom: 2px solid var(--black); }
+.drawer header h2 { font-size: 34px; }
+.x { width: 44px; height: 44px; border: 0; background: var(--gray); border-radius: 6px; font-size: 22px; cursor: pointer; }
+.drawer .body { flex: 1; overflow-y: auto; padding: 18px 20px; }
+.seg { display: grid; grid-template-columns: 1fr 1fr; background: var(--gray); border-radius: 8px; padding: 4px; margin-bottom: 8px; }
+.seg button { border: 0; background: transparent; border-radius: 6px; min-height: 46px; font-weight: 800; text-transform: uppercase; font-size: 14px; letter-spacing: .03em; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--black); color: var(--white); }
+.seg-note { font-size: 13px; color: var(--muted); margin: 0 0 16px; }
+.lines { list-style: none; margin: 0; padding: 0; }
+.lines li { display: grid; grid-template-columns: 1fr auto; gap: 8px 12px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.lines .nm { font-weight: 700; }
+.lines .amt { font-weight: 800; text-align: right; font-variant-numeric: tabular-nums; }
+.qty { justify-self: start; display: inline-flex; align-items: center; border: 2px solid var(--black); border-radius: 6px; }
+.qty button { width: 36px; height: 34px; border: 0; background: transparent; font-size: 18px; font-weight: 800; cursor: pointer; }
+.qty span { min-width: 26px; text-align: center; font-weight: 800; }
+.empty { color: var(--muted); padding: 24px 0; text-align: center; }
+.drawer footer.sum { padding: 16px 20px; border-top: 2px solid var(--black); background: var(--white); color: var(--black); }
+.tot { display: flex; justify-content: space-between; font-size: 15px; padding: 3px 0; font-variant-numeric: tabular-nums; }
+.tot.grand { font-weight: 800; font-size: 19px; padding-top: 8px; }
+.warn { background: #ffe8ec; color: var(--red-dark); border-radius: 6px; padding: 10px 12px; font-size: 14px; font-weight: 600; margin: 10px 0 0; }
+.drawer footer.sum .btn { width: 100%; margin-top: 12px; }
+
+.modal { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; background: rgba(0,0,0,.82); overflow-y: auto; padding: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(16px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
+.sheet { background: var(--white); color: var(--black); border-radius: 12px; width: min(520px, 100%); padding: 28px; }
+.sheet h2 { font-size: 46px; margin-bottom: 10px; }
+.sheet p { color: var(--muted); margin: 0 0 20px; }
+.sheet .acts { display: flex; flex-wrap: wrap; gap: 10px; }
+.sheet .acts .btn { flex: 1 1 180px; }
+.fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+.field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.field.full { grid-column: 1 / -1; }
+.field label { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+.field input { font: 400 16px/1.2 var(--body); padding: 12px; border: 2px solid var(--line); border-radius: 6px; width: 100%; background: var(--white); color: var(--black); }
+.field input:focus { border-color: var(--black); outline: none; }
+.check { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--muted); margin-bottom: 12px; }
+.check input { width: 20px; height: 20px; margin-top: 1px; flex: none; }
+.err { color: var(--red-dark); font-weight: 600; font-size: 14px; min-height: 1.2em; margin-bottom: 12px; }
+.receipt { background: var(--gray); border-radius: 8px; padding: 14px; font-weight: 700; margin-bottom: 16px; }
+.ok-mark { width: 56px; height: 56px; border-radius: 50%; background: var(--green); color: var(--white); display: grid; place-items: center; font-size: 30px; margin-bottom: 14px; }
+
+@media (max-width: 1000px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .hero .wrap { grid-template-columns: 1fr; }
+  .visit .cols { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  nav.main { display: none; }
+  header.top .order-btn { margin-left: auto; }
+  .facts .wrap { grid-template-columns: 1fr; }
+  .fact { padding-block: 10px; border-bottom: 1px solid rgba(255,255,255,.25); }
+  .steps, .zone { grid-template-columns: 1fr; }
+  .bar { display: block; }
+  body { padding-bottom: 76px; }
+  section { padding-block: 52px; }
+  .hero .wrap { padding-block: 40px 44px; }
+  .callcard { min-width: 0; }
+}
+@media (max-width: 480px) {
+  .grid { grid-template-columns: 1fr; }
+  .fields { grid-template-columns: 1fr; }
+  .logo { font-size: 26px; }
+  .hero .ctas .btn { flex: 1 1 100%; }
+}
+
+/* preview protection */
+body.locked { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+body.locked input { -webkit-user-select: text; user-select: text; }
+.wm { position: fixed; inset: 0; z-index: 45; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='220'%3E%3Ctext x='20' y='130' transform='rotate(-24 180 110)' font-family='Arial,sans-serif' font-size='20' font-weight='700' fill='%23888' fill-opacity='0.16'%3EPREVIEW %C2%B7 TEQNIKAL SERVICES%3C/text%3E%3C/svg%3E"); }
+.expired { position: fixed; inset: 0; z-index: 100; background: var(--black); color: var(--white); display: grid; place-items: center; text-align: center; padding: 24px max(16px, env(safe-area-inset-right, 0px)) 24px max(16px, env(safe-area-inset-left, 0px)); }
+.expired h2 { font-size: 56px; margin-bottom: 12px; }
+.expired p { color: #cfcfcb; max-width: 40ch; margin: 0 auto; }
+@media print { body * { display: none !important; } }
+</style>
+</head>
+<body>
+
+<div class="ribbon"><div class="wrap">Private preview by Teqnikal Services for Smokers Only. Not the shop's official site. Orders here are not real. Please don't share this link.</div></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top">Smokers <span>Only</span></a>
+    <nav class="main" aria-label="Main">
+      <a href="#shop">Shop</a>
+      <a href="#delivery">Delivery</a>
+      <a href="#visit">Hours &amp; Location</a>
+    </nav>
+    <button class="btn order-btn" type="button" data-open-cart>Order <b id="count">0</b></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" style="padding-block:0">
+    <div class="wrap">
+      <div>
+        <div class="pill" id="status"><i></i><span>Checking hours</span></div>
+        <h1>Tobacco &amp; Vape.<br><em>Delivered.</em></h1>
+        <p>Order online from Smokers Only in Garden City. We bring it to your door, or have it ready when you walk in. Open till midnight on weekends.</p>
+        <div class="ctas">
+          <a class="btn" href="#shop" data-mode-link="delivery">Order delivery</a>
+          <a class="btn white" href="#shop" data-mode-link="pickup">Order pickup</a>
+        </div>
+      </div>
+      <div class="callcard">
+        <small>Call the store</small>
+        <div class="big">(734) 237-4034</div>
+        <div class="addr">27555 Warren Rd<br>Garden City, MI 48135</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="facts">
+    <div class="wrap">
+      <div class="fact"><span>12AM</span> Open late Fri to Sun</div>
+      <div class="fact"><span>9</span> ZIP codes for delivery</div>
+      <div class="fact"><span>21+</span> ID checked on every order</div>
+    </div>
+  </div>
+
+  <section id="shop">
+    <div class="wrap">
+      <div class="head">
+        <h2>Shop</h2>
+        <p>Pick a category, add what you need, then choose delivery or pickup.</p>
+      </div>
+      <div class="tabs" id="tabs" role="group" aria-label="Categories"></div>
+      <div class="grid" id="grid"></div>
+      <p class="note">Sample products and prices for this preview. The store sets its own menu.</p>
+    </div>
+  </section>
+
+  <section class="delivery" id="delivery">
+    <div class="wrap">
+      <div class="head">
+        <h2>How delivery works</h2>
+        <p>Our own drivers deliver. Every order is age-checked online and again at your door.</p>
+      </div>
+      <ol class="steps">
+        <li><h3>Order &amp; verify</h3><p>Check out with your name, address and date of birth. We confirm you're 21+ before we accept the order.</p></li>
+        <li><h3>We drive it over</h3><p>A Smokers Only driver brings your sealed order. You'll get a text when they're on the way.</p></li>
+        <li><h3>Show ID &amp; sign</h3><p>The driver scans your ID and you sign. No ID, no handoff. We never leave orders at the door.</p></li>
+      </ol>
+      <div class="zone">
+        <div>
+          <h3>We deliver to</h3>
+          <div class="zips"><span>48135</span><span>48185</span><span>48186</span><span>48150</span><span>48152</span><span>48154</span><span>48141</span><span>48127</span><span>48184</span></div>
+          <p>Garden City, Westland, Livonia, Inkster, Dearborn Heights and Wayne. $25 minimum, $4.99 delivery.</p>
+        </div>
+        <div>
+          <h3>We can't deliver to</h3>
+          <ul>
+            <li>P.O. boxes or lockers</li>
+            <li>Schools, campuses or hospitals</li>
+            <li>Anyone but the person who ordered</li>
+          </ul>
+          <p>Lighters and accessories are also on DoorDash.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="visit" id="visit">
+    <div class="wrap">
+      <div class="head"><h2>Hours &amp; Location</h2></div>
+      <div class="cols">
+        <div class="box">
+          <h3>Hours</h3>
+          <table class="hours" id="hours"></table>
+        </div>
+        <div class="box">
+          <h3>Address</h3>
+          <div class="big">27555 Warren Rd<br>Garden City, MI 48135</div>
+          <a class="btn line" href="https://www.google.com/maps/search/?api=1&amp;query=27555+Warren+Rd+Garden+City+MI+48135" target="_blank" rel="noopener">Get directions</a>
+        </div>
+        <div class="box">
+          <h3>Phone</h3>
+          <div class="big">(734) 237-4034</div>
+          <p>Apple Pay, cards, cash and Zelle accepted in store.</p>
+          <a class="btn line" href="https://www.facebook.com/Smokersonly27555/" target="_blank" rel="noopener">Facebook</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Smokers Only · 27555 Warren Rd, Garden City, MI · You must be 21 or older to buy tobacco and vapor products.</span>
+    <span>Concept by Teqnikal Services</span>
+  </div>
+</footer>
+
+<div class="wm" aria-hidden="true"></div>
+<div class="expired" id="expired" hidden><div><h2>Preview ended</h2><p>This private preview from Teqnikal Services has expired. Contact your Teqnikal rep to see it again.</p></div></div>
+<script>
+(function () {
+  // Preview window. Teqnikal can also end it at any time by republishing or turning sharing off.
+  var EXPIRES = new Date("2026-10-17T03:59:00Z"); // Oct 16, 11:59 pm Detroit time
+  if (new Date() > EXPIRES) { document.getElementById("expired").hidden = false; document.querySelector("main").innerHTML = ""; }
+  document.body.classList.add("locked");
+  document.addEventListener("contextmenu", function (e) { e.preventDefault(); });
+  document.addEventListener("copy", function (e) { if (!/INPUT/.test(e.target.tagName)) e.preventDefault(); });
+  document.addEventListener("dragstart", function (e) { e.preventDefault(); });
+  document.addEventListener("keydown", function (e) {
+    var k = (e.key || "").toLowerCase();
+    if ((e.ctrlKey || e.metaKey) && ["s", "p", "u"].indexOf(k) > -1) e.preventDefault();
+  });
+})();
+</script>
+<div class="bar"><button class="btn" type="button" data-open-cart><span>View order (<span id="barCount">0</span>)</span><span id="barTotal">$0.00</span></button></div>
+
+<!-- cart drawer -->
+<div class="veil" id="veil" hidden></div>
+<aside class="drawer" id="drawer" aria-label="Your order" hidden>
+  <header><h2>Your order</h2><button class="x" type="button" id="closeCart" aria-label="Close">×</button></header>
+  <div class="body">
+    <div class="seg" role="group" aria-label="Delivery or pickup">
+      <button type="button" data-mode="delivery" aria-pressed="true">Delivery</button>
+      <button type="button" data-mode="pickup" aria-pressed="false">Pickup</button>
+    </div>
+    <p class="seg-note" id="segNote"></p>
+    <ul class="lines" id="lines"></ul>
+    <div class="empty" id="empty">Your order is empty.</div>
+  </div>
+  <footer class="sum">
+    <div id="totals"></div>
+    <div class="warn" id="warn" hidden></div>
+    <button class="btn" type="button" id="checkout" disabled>Checkout</button>
+  </footer>
+</aside>
+
+<!-- age gate -->
+<div class="modal" id="gate" role="dialog" aria-modal="true" aria-labelledby="gateT">
+  <div class="sheet">
+    <h2 id="gateT">Are you 21+?</h2>
+    <p>You must be 21 or older to enter. We check ID again on every order.</p>
+    <div class="acts">
+      <button class="btn" type="button" id="yes">Yes, I'm 21+</button>
+      <button class="btn line" type="button" id="no">No</button>
+    </div>
+    <div class="err" id="gateErr" style="margin:14px 0 0"></div>
+  </div>
+</div>
+
+<!-- checkout -->
+<div class="modal" id="co" role="dialog" aria-modal="true" aria-labelledby="coT" hidden>
+  <div class="sheet">
+    <form id="coForm" novalidate>
+      <h2 id="coT">Checkout</h2>
+      <p id="coIntro"></p>
+      <div class="fields">
+        <div class="field"><label for="fFirst">First name</label><input id="fFirst" autocomplete="given-name" value="Dana"></div>
+        <div class="field"><label for="fLast">Last name</label><input id="fLast" autocomplete="family-name" value="Morales"></div>
+        <div class="field"><label for="fDob">Date of birth</label><input id="fDob" type="date" value="1988-04-12"></div>
+        <div class="field"><label for="fPhone">Mobile</label><input id="fPhone" type="tel" autocomplete="tel" value="(734) 555-0148"></div>
+        <div class="field full addr"><label for="fStreet">Street address</label><input id="fStreet" autocomplete="street-address" value="31200 Ford Rd"></div>
+        <div class="field addr"><label for="fCity">City</label><input id="fCity" autocomplete="address-level2" value="Garden City"></div>
+        <div class="field addr"><label for="fZip">ZIP</label><input id="fZip" inputmode="numeric" maxlength="5" autocomplete="postal-code" value="48135"></div>
+        <div class="field full addr"><label for="fId">Photo ID (first delivery only)</label><input id="fId" type="file" accept="image/*"></div>
+      </div>
+      <label class="check"><input type="checkbox" id="fAgree"><span id="agreeTxt"></span></label>
+      <div class="err" id="coErr" role="alert"></div>
+      <div class="acts">
+        <button class="btn" type="submit">Place order</button>
+        <button class="btn line" type="button" id="coBack">Back</button>
+      </div>
+    </form>
+    <div id="done" hidden>
+      <div class="ok-mark" aria-hidden="true">✓</div>
+      <h2 id="doneT">Order placed</h2>
+      <div class="receipt" id="receipt"></div>
+      <p id="doneTxt"></p>
+      <button class="btn" type="button" id="doneBtn">Done</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var money = function (n) { return "$" + n.toFixed(2); };
+
+  // Hours from the shop's public listing (confirm with the owner).
+  var HOURS = [
+    { d: "Sunday", o: 10, c: 24 }, { d: "Monday", o: 10, c: 23 }, { d: "Tuesday", o: 10, c: 23 },
+    { d: "Wednesday", o: 10, c: 23 }, { d: "Thursday", o: 10, c: 23 }, { d: "Friday", o: 10, c: 24 }, { d: "Saturday", o: 10, c: 24 }
+  ];
+  function fmt(h) { if (h === 24) return "12 am"; return (h % 12 || 12) + (h >= 12 ? " pm" : " am"); }
+  function now() {
+    try {
+      var p = {}; new Intl.DateTimeFormat("en-US", { timeZone: "America/Detroit", weekday: "short", hour: "numeric", minute: "numeric", hour12: false })
+        .formatToParts(new Date()).forEach(function (x) { p[x.type] = x.value; });
+      return { day: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(p.weekday), h: (+p.hour % 24) + (+p.minute) / 60 };
+    } catch (e) { var d = new Date(); return { day: d.getDay(), h: d.getHours() + d.getMinutes() / 60 }; }
+  }
+  var n = now();
+  [1,2,3,4,5,6,0].forEach(function (i) {
+    var tr = document.createElement("tr"); if (i === n.day) tr.className = "today";
+    tr.innerHTML = "<td>" + HOURS[i].d + "</td><td>" + fmt(HOURS[i].o) + " – " + fmt(HOURS[i].c) + "</td>";
+    $("hours").appendChild(tr);
+  });
+  var t = HOURS[n.day], open = n.h >= t.o && n.h < t.c;
+  $("status").className = "pill" + (open ? "" : " closed");
+  $("status").querySelector("span").textContent = open ? "Open now · till " + fmt(t.c) : "Closed · opens " + fmt(n.h < t.o ? t.o : HOURS[(n.day + 1) % 7].o);
+
+  // Sample catalog
+  var ITEMS = [
+    { id: "v1", cat: "Vape", name: "Breeze Pro disposable", desc: "2,000 puffs. Mix any 2 flavors.", price: 15.99, deal: "2 for $30" },
+    { id: "v2", cat: "Vape", name: "Candy King Air disposable", desc: "6,000 puffs, rechargeable.", price: 21.99 },
+    { id: "v3", cat: "Vape", name: "Lookah Seahorse Pro", desc: "Electric dab pen kit.", price: 49.99 },
+    { id: "v4", cat: "Vape", name: "Salt e-liquid, 30 ml", desc: "35 or 50 mg nicotine.", price: 17.99 },
+    { id: "c1", cat: "Cigarettes", name: "Cigarettes, pack", desc: "All major brands.", price: 11.49 },
+    { id: "c2", cat: "Cigarettes", name: "Cigarettes, carton", desc: "10 packs, all major brands.", price: 99.99 },
+    { id: "g1", cat: "Cigars", name: "Cigarillos, 2-pack", desc: "Grape, sweet or natural.", price: 1.99 },
+    { id: "g2", cat: "Cigars", name: "Premium cigar, single", desc: "Hand-rolled robusto.", price: 9.50 },
+    { id: "h1", cat: "Hookah", name: "Shisha, 250 g", desc: "Double apple, mint, blueberry.", price: 18.99 },
+    { id: "h2", cat: "Hookah", name: "Coconut coals, 72 ct", desc: "Natural, low ash.", price: 12.99 },
+    { id: "s1", cat: "Pouches", name: "Nicotine pouches", desc: "Mint or wintergreen, 6 mg.", price: 6.49 },
+    { id: "a1", cat: "Accessories", name: "Torch lighter", desc: "Refillable, adjustable flame.", price: 14.99 },
+    { id: "a2", cat: "Accessories", name: "Rolling papers, 1¼", desc: "Unbleached, 50 leaves.", price: 2.49 },
+    { id: "a3", cat: "Accessories", name: "Odor eliminator spray", desc: "Car and home.", price: 8.99 }
+  ];
+  var CATS = ["All", "Vape", "Cigarettes", "Cigars", "Hookah", "Pouches", "Accessories"];
+  var ZIPS = ["48135","48185","48186","48150","48152","48154","48141","48127","48184"];
+  var S = { cat: "All", mode: "delivery", cart: {} };
+  var find = function (id) { return ITEMS.filter(function (x) { return x.id === id; })[0]; };
+
+  CATS.forEach(function (c) {
+    var b = document.createElement("button"); b.type = "button"; b.className = "tab"; b.textContent = c;
+    b.onclick = function () { S.cat = c; drawShop(); };
+    $("tabs").appendChild(b);
+  });
+
+  function drawShop() {
+    document.querySelectorAll(".tab").forEach(function (b) { b.setAttribute("aria-pressed", b.textContent === S.cat ? "true" : "false"); });
+    var g = $("grid"); g.innerHTML = "";
+    ITEMS.filter(function (p) { return S.cat === "All" || p.cat === S.cat; }).forEach(function (p) {
+      var el = document.createElement("div"); el.className = "card";
+      el.innerHTML = "<div class='cat'></div><h3></h3><div class='desc'></div>" +
+        (p.cat !== "Accessories" ? "<div class='id'>21+ · ID required</div>" : "") +
+        "<div class='row'><div class='price'>" + money(p.price) + "</div><button class='btn add' type='button'>Add</button></div>";
+      el.querySelector(".cat").textContent = p.deal ? p.cat + " · " + p.deal : p.cat;
+      el.querySelector("h3").textContent = p.name;
+      el.querySelector(".desc").textContent = p.desc;
+      var b = el.querySelector(".add");
+      b.onclick = function () { S.cart[p.id] = (S.cart[p.id] || 0) + 1; drawCart(); b.textContent = "Added"; setTimeout(function () { b.textContent = "Add"; }, 900); };
+      g.appendChild(el);
+    });
+  }
+
+  function drawCart() {
+    var delivery = S.mode === "delivery";
+    document.querySelectorAll(".seg button").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.mode === S.mode ? "true" : "false"); });
+    $("segNote").textContent = delivery ? "Our driver brings it to you. $25 minimum. ID checked at the door." : "Ready in about 20 minutes. Pay and show ID at the counter.";
+    var ul = $("lines"); ul.innerHTML = ""; var sub = 0, count = 0;
+    Object.keys(S.cart).forEach(function (id) {
+      var p = find(id), q = S.cart[id]; sub += p.price * q; count += q;
+      var li = document.createElement("li");
+      li.innerHTML = "<span class='nm'></span><span class='amt'>" + money(p.price * q) + "</span><span class='qty'><button type='button' aria-label='Remove one'>−</button><span>" + q + "</span><button type='button' aria-label='Add one'>+</button></span>";
+      li.querySelector(".nm").textContent = p.name;
+      var bs = li.querySelectorAll("button");
+      bs[0].onclick = function () { if (--S.cart[id] <= 0) delete S.cart[id]; drawCart(); };
+      bs[1].onclick = function () { S.cart[id]++; drawCart(); };
+      ul.appendChild(li);
+    });
+    var fee = delivery && count ? 4.99 : 0, tax = sub * 0.06, total = sub + fee + tax;
+    $("empty").hidden = count > 0;
+    $("totals").innerHTML = count ? "<div class='tot'><span>Subtotal</span><span>" + money(sub) + "</span></div>" +
+      (fee ? "<div class='tot'><span>Delivery</span><span>" + money(fee) + "</span></div>" : "") +
+      "<div class='tot'><span>Tax</span><span>" + money(tax) + "</span></div>" +
+      "<div class='tot grand'><span>" + (delivery ? "Total" : "Pay in store") + "</span><span>" + money(total) + "</span></div>" : "";
+    var short = delivery && count && sub < 25;
+    $("warn").hidden = !short; if (short) $("warn").textContent = "Add " + money(25 - sub) + " more for delivery, or switch to pickup.";
+    $("checkout").disabled = !count || short;
+    $("checkout").textContent = delivery ? "Checkout · " + money(total) : "Reserve for pickup";
+    $("count").textContent = count; $("barCount").textContent = count; $("barTotal").textContent = money(total);
+    S.total = total;
+  }
+
+  function openCart() { $("veil").hidden = false; $("drawer").hidden = false; }
+  function closeCart() { $("veil").hidden = true; $("drawer").hidden = true; }
+  document.querySelectorAll("[data-open-cart]").forEach(function (b) { b.onclick = openCart; });
+  $("closeCart").onclick = closeCart; $("veil").onclick = closeCart;
+  document.querySelectorAll(".seg button").forEach(function (b) { b.onclick = function () { S.mode = b.dataset.mode; drawCart(); }; });
+  document.querySelectorAll("[data-mode-link]").forEach(function (a) { a.addEventListener("click", function () { S.mode = a.dataset.modeLink; drawCart(); }); });
+
+  drawShop(); drawCart();
+
+  // age gate (remembered in this browser only, as a convenience)
+  try { if (localStorage.getItem("so-21") === "yes") $("gate").hidden = true; } catch (e) {}
+  $("yes").onclick = function () { $("gate").hidden = true; try { localStorage.setItem("so-21", "yes"); } catch (e) {} };
+  $("no").onclick = function () { $("gateErr").textContent = "Sorry, you must be 21 or older to use this site."; };
+
+  // checkout
+  function age(v) {
+    var b = new Date(v + "T00:00:00"); if (isNaN(b)) return -1;
+    var d = new Date(), a = d.getFullYear() - b.getFullYear();
+    if (d.getMonth() < b.getMonth() || (d.getMonth() === b.getMonth() && d.getDate() < b.getDate())) a--;
+    return a;
+  }
+  $("checkout").onclick = function () {
+    var del = S.mode === "delivery";
+    closeCart();
+    $("coForm").hidden = false; $("done").hidden = true; $("coErr").textContent = ""; $("fAgree").checked = false;
+    document.querySelectorAll(".addr").forEach(function (el) { el.hidden = !del; });
+    $("coT").textContent = del ? "Delivery checkout" : "Reserve for pickup";
+    $("coIntro").textContent = del ? "We confirm you're 21+ before we accept the order." : "We'll hold it for 24 hours. Bring a photo ID that matches this name.";
+    $("agreeTxt").textContent = del ? "I'm 21+, I'll be the one receiving this order, and I'll show ID and sign at the door." : "I'm 21+ and will show a valid photo ID at pickup.";
+    $("co").hidden = false;
+  };
+  $("coBack").onclick = function () { $("co").hidden = true; openCart(); };
+  $("doneBtn").onclick = function () { $("co").hidden = true; S.cart = {}; drawCart(); };
+  $("coForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var del = S.mode === "delivery", err = "", a = age($("fDob").value);
+    if (!$("fFirst").value.trim() || !$("fLast").value.trim()) err = "Enter your name as it appears on your ID.";
+    else if (a < 0) err = "Enter your date of birth.";
+    else if (a < 21) err = "You must be 21 or older to order.";
+    else if (del && !$("fStreet").value.trim()) err = "Enter your street address.";
+    else if (del && /\b(p\.?\s?o\.?\s*box|locker)\b/i.test($("fStreet").value)) err = "We can't deliver to P.O. boxes or lockers.";
+    else if (del && ZIPS.indexOf($("fZip").value.trim()) < 0) err = "That ZIP is outside our delivery area. Switch to pickup.";
+    else if (!$("fAgree").checked) err = "Check the box to continue.";
+    $("coErr").textContent = err; if (err) return;
+    var num = "SO-" + Math.floor(1000 + Math.random() * 9000), who = $("fFirst").value.trim() + " " + $("fLast").value.trim();
+    $("coForm").hidden = true; $("done").hidden = false;
+    $("doneT").textContent = del ? "On its way soon" : "Held for you";
+    $("receipt").textContent = num + " · " + who + " · " + money(S.total);
+    $("doneTxt").textContent = del ? "Age check passed. We'll text you when the driver leaves. Have your ID ready." : "We'll text you when it's ready. Pay and show ID at the counter.";
+  });
+})();
+</script>
+</body>
+</html>
