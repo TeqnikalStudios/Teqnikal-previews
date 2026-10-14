@@ -1,2 +1,4 @@
 User-agent: *
-Disallow: /
+Allow: /$
+Disallow: /smokers-only-garden-city/
+Disallow: /studios/
