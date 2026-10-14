@@ -329,9 +329,6 @@ body.locked input { -webkit-user-select: text; user-select: text; }
 <div class="expired" id="expired" hidden><div><h2>Preview ended</h2><p>This private preview from Teqnikal Services has expired. Contact your Teqnikal rep to see it again.</p></div></div>
 <script>
 (function () {
-  // Preview window. Teqnikal can also end it at any time by republishing or turning sharing off.
-  var EXPIRES = new Date("2026-10-17T03:59:00Z"); // Oct 16, 11:59 pm Detroit time
-  if (new Date() > EXPIRES) { document.getElementById("expired").hidden = false; document.querySelector("main").innerHTML = ""; }
   document.body.classList.add("locked");
   document.addEventListener("contextmenu", function (e) { e.preventDefault(); });
   document.addEventListener("copy", function (e) { if (!/INPUT/.test(e.target.tagName)) e.preventDefault(); });
