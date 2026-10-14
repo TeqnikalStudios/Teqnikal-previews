@@ -1,0 +1,2 @@
+# Teqnikal-previews
+SAMPLES ONLY
