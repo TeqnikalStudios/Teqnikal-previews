@@ -585,6 +585,7 @@ footer .logo-mark { width: 34px; }
 
 <script>
 var STUDIO_EMAIL = 'hello@teqnikalstudios.com';
+var FORM_ENDPOINT = 'https://n8n.cliphooligan.com/webhook/teqnikal-contact';
 
 // Tabs
 (function () {
@@ -637,12 +638,24 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
   var missing = ['f-name', 'f-biz', 'f-email'].filter(function (id) { return !val(id); });
   if (missing.length) { status.textContent = 'Add your name, business and email so we can reach you.'; document.getElementById(missing[0]).focus(); return; }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val('f-email'))) { status.textContent = 'Check your email address. It should look like name@example.com.'; document.getElementById('f-email').focus(); return; }
-  var subject = 'Consultation request: ' + val('f-biz');
-  var body = 'Name: ' + val('f-name') + '\nBusiness: ' + val('f-biz') + '\nEmail: ' + val('f-email') +
-    '\nPhone: ' + (val('f-phone') || 'Not given') + '\nInterested in: ' + val('f-need') +
-    '\n\n' + (val('f-msg') || '');
-  window.location.href = 'mailto:' + STUDIO_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-  status.textContent = 'Your email app should open with your request ready to send. If it doesn\u2019t, email us at ' + STUDIO_EMAIL + '.';
+  var form = this, btn = form.querySelector('button[type=submit]');
+  var data = { name: val('f-name'), business: val('f-biz'), email: val('f-email'), phone: val('f-phone'), need: val('f-need'), message: val('f-msg') };
+  function mailtoFallback() {
+    var subject = 'Consultation request: ' + data.business;
+    var body = 'Name: ' + data.name + '\nBusiness: ' + data.business + '\nEmail: ' + data.email +
+      '\nPhone: ' + (data.phone || 'Not given') + '\nInterested in: ' + data.need + '\n\n' + (data.message || '');
+    window.location.href = 'mailto:' + STUDIO_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    status.textContent = 'Your email app should open with your request ready to send. If it doesn\u2019t, email us at ' + STUDIO_EMAIL + '.';
+  }
+  btn.disabled = true; status.textContent = 'Sending\u2026';
+  fetch(FORM_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
+    .then(function (r) { if (!r.ok) throw new Error('bad'); return r.json(); })
+    .then(function (j) {
+      if (!j || !j.ok) throw new Error('bad');
+      form.reset(); btn.disabled = false;
+      status.textContent = 'Thanks! We got your request and will reach out soon.';
+    })
+    .catch(function () { btn.disabled = false; mailtoFallback(); });
 });
 </script>
 </body>
