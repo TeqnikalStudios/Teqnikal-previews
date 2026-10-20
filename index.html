@@ -195,6 +195,23 @@ section.band { padding-block: 104px; }
 .creation-cta .btn-solid:hover { background: var(--paper); color: var(--ink); }
 @media (max-width: 1000px) { .creations { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 520px) { .creations { grid-template-columns: 1fr; } }
+/* Sample work */
+.samples { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1.5px solid var(--ink); }
+.sample { display: grid; grid-template-rows: auto 1fr; color: inherit; text-decoration: none; }
+.sample + .sample { border-left: 1px solid var(--rule); }
+.sample-shot { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: var(--mist); border-bottom: 1px solid var(--rule); }
+.sample-shot iframe { position: absolute; top: 0; left: 0; width: 1280px; height: 800px; border: 0; transform-origin: 0 0; pointer-events: none; }
+.sample-body { padding: 24px 24px 28px; display: grid; gap: 10px; align-content: start; }
+.sample-body p { font-size: 15px; }
+.sample-body .more { font-family: var(--mono); font-size: 13px; letter-spacing: .04em; margin-top: 6px; }
+a.sample:hover .more { text-decoration: underline; }
+a.sample:focus-visible { outline: 2px solid var(--ink); outline-offset: -4px; }
+.sample-cta { background: var(--ink); color: var(--paper); padding: 28px 24px; display: grid; gap: 12px; align-content: start; }
+.sample-cta .mute { color: var(--mute-inv); }
+.sample-cta .btn-solid { background: var(--paper); color: var(--ink); border-color: var(--paper); justify-self: start; margin-top: 6px; }
+.sample-cta .btn-solid:hover { background: var(--ink); color: var(--paper); }
+@media (max-width: 1000px) { .samples { grid-template-columns: repeat(2, minmax(0, 1fr)); } .sample:nth-child(3) { border-left: 0; } .samples > :nth-child(n+3) { border-top: 1px solid var(--rule); } }
+@media (max-width: 560px) { .samples { grid-template-columns: 1fr; } .samples > * + * { border-left: 0 !important; border-top: 1px solid var(--rule); } }
 .split { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); border: 1.5px solid var(--ink); }
 .split-col { padding: 32px; display: grid; gap: 20px; align-content: start; }
 .split-human { background: var(--ink); color: var(--paper); }
@@ -264,6 +281,7 @@ footer .logo-mark { width: 34px; }
     <ul id="nav-links">
       <li><a href="#home">Home</a></li>
       <li><a href="#how">How it works</a></li>
+      <li><a href="#work">Work</a></li>
       <li><a href="#custom">Custom</a></li>
       <li><a href="#management">Management</a></li>
       <li><a href="#pricing">Pricing</a></li>
@@ -402,6 +420,37 @@ footer .logo-mark { width: 34px; }
             <li><strong>Handle anything sensitive</strong><span>Complaints, judgment calls and anything unusual go straight to a human.</span></li>
             <li><strong>Answer to you</strong><span>You talk to a real person, and every change is logged so you can see who approved it.</span></li>
           </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-tab="work" class="band" id="work" aria-labelledby="work-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="label mute">Sample work</span>
+        <div>
+          <h2 id="work-title">See what we build.</h2>
+          <p class="mute">These are sample websites we designed for made-up Detroit businesses, so you can click around a finished site. Yours is designed around your business, and you see a free preview before you pay.</p>
+        </div>
+      </div>
+      <div class="samples">
+        <a class="sample" href="/samples/motor-city-mechanical/" target="_blank" rel="noopener">
+          <div class="sample-shot"><iframe src="/samples/motor-city-mechanical/" title="Preview of the Motor City Mechanical sample site" loading="lazy" tabindex="-1" aria-hidden="true"></iframe></div>
+          <div class="sample-body"><span class="label mute">Home services</span><h3>Motor City Mechanical</h3><p class="mute">Heating, cooling and plumbing. Built to get the phone ringing, with tap-to-call, reviews and a service area.</p><span class="more">View sample →</span></div>
+        </a>
+        <a class="sample" href="/samples/brush-park-bakery/" target="_blank" rel="noopener">
+          <div class="sample-shot"><iframe src="/samples/brush-park-bakery/" title="Preview of the Brush Park Bakery sample site" loading="lazy" tabindex="-1" aria-hidden="true"></iframe></div>
+          <div class="sample-body"><span class="label mute">Food and drink</span><h3>Brush Park Bakery</h3><p class="mute">A bakery and cafe with a full menu, hours, and ordering ahead for pickup.</p><span class="more">View sample →</span></div>
+        </a>
+        <a class="sample" href="/samples/corktown-cuts/" target="_blank" rel="noopener">
+          <div class="sample-shot"><iframe src="/samples/corktown-cuts/" title="Preview of the Corktown Cuts sample site" loading="lazy" tabindex="-1" aria-hidden="true"></iframe></div>
+          <div class="sample-body"><span class="label mute">Personal care</span><h3>Corktown Cuts</h3><p class="mute">A barbershop with prices, barber profiles and online booking front and center.</p><span class="more">View sample →</span></div>
+        </a>
+        <div class="sample-cta">
+          <h3>Want to see yours?</h3>
+          <p class="mute">Tell us about your business and we'll build a free preview of your new site before you commit.</p>
+          <a class="btn btn-solid" href="#contact">Get my free preview <span class="arrow">→</span></a>
         </div>
       </div>
     </div>
@@ -596,7 +645,7 @@ var FORM_ENDPOINT = 'https://n8n.cliphooligan.com/webhook/teqnikal-contact';
 
 // Tabs
 (function () {
-  var map = { top:'home', home:'home', services:'home', how:'how', process:'how', oversight:'how', custom:'custom', management:'management', social:'management', pricing:'pricing', contact:'contact' };
+  var map = { top:'home', home:'home', services:'home', how:'how', process:'how', oversight:'how', work:'work', samples:'work', custom:'custom', management:'management', social:'management', pricing:'pricing', contact:'contact' };
   var parts = document.querySelectorAll('[data-tab]');
   var links = document.querySelectorAll('#nav-links a');
   function show(hash, scroll) {
@@ -617,6 +666,20 @@ var FORM_ENDPOINT = 'https://n8n.cliphooligan.com/webhook/teqnikal-contact';
   });
   window.addEventListener('popstate', function () { show(location.hash); });
   show(location.hash, false);
+})();
+
+// Sample previews: scale each 1280px-wide live preview to fit its card
+(function () {
+  var shots = document.querySelectorAll('.sample-shot');
+  function fit() {
+    shots.forEach(function (s) {
+      var f = s.querySelector('iframe');
+      if (f && s.clientWidth) f.style.transform = 'scale(' + (s.clientWidth / 1280) + ')';
+    });
+  }
+  if ('ResizeObserver' in window) { var ro = new ResizeObserver(fit); shots.forEach(function (s) { ro.observe(s); }); }
+  window.addEventListener('resize', fit);
+  fit();
 })();
 
 // Copy email
