@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Lavender &amp; Line Salon | Sample website by Teqnikal Studios</title>
+<meta name="description" content="A sample hair salon website built by Teqnikal Studios. Lavender &amp; Line Salon is a fictional business.">
+<style>
+:root{--bg:#fdfbff;--ink:#2b2233;--accent:#7a4fa3;--soft:#f3edf8;--mute:#6c6175;--line:#e6dcef;--on-accent:#ffffff}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.6 system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:var(--ink);background:var(--bg)}
+h1,h2,h3{font-family:Georgia,'Times New Roman',serif;line-height:1.1;margin:0}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.ts{background:#0b0b0c;color:#fff;font:500 13px/1.3 system-ui,sans-serif}
+.ts .wrap{display:flex;justify-content:space-between;gap:12px;padding-top:9px;padding-bottom:9px}
+.ts a{color:#fff;font-weight:600;white-space:nowrap}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:18px;padding-bottom:18px}
+.brand{font:italic 400 24px/1 Georgia,serif;text-decoration:none;letter-spacing:0}
+.brand span{color:var(--accent)}
+.btn{display:inline-block;background:var(--accent);color:var(--on-accent);text-decoration:none;font-weight:600;padding:12px 20px;border-radius:999px;white-space:nowrap;border:2px solid var(--accent)}
+.btn.alt{background:transparent;color:var(--ink);border-color:var(--ink)}
+.hero{background:var(--soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.hero .wrap{padding-top:72px;padding-bottom:72px;display:grid;gap:20px;max-width:1080px}
+.kicker{color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:13px}
+.hero h1{font-size:clamp(40px,7vw,72px);max-width:13em}
+.hero p{font-size:19px;color:var(--mute);max-width:34em}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+section{padding:64px 0}
+h2{font-size:clamp(28px,4vw,40px);margin-bottom:28px}
+.list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.card{border:1px solid var(--line);border-radius:14px;padding:22px;display:grid;gap:6px;align-content:start;background:var(--bg)}
+.card .row{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.card strong{font-size:18px}
+.card b{color:var(--accent);white-space:nowrap}
+.card p{color:var(--mute);font-size:15px}
+.quote{background:var(--soft);border-left:4px solid var(--accent);padding:20px 22px;border-radius:14px}
+.quote cite{display:block;font-style:normal;color:var(--mute);font-size:14px;margin-top:8px}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;border-top:1px solid var(--line);padding-top:28px}
+.info h3{font-size:20px;margin-bottom:8px}
+.info p{color:var(--mute)}
+footer{border-top:1px solid var(--line);padding:24px 0;font-size:14px;color:var(--mute)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+.note{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#0b0b0c;color:#fff;padding:12px 18px;border-radius:8px;font:14px system-ui,sans-serif;display:none;max-width:calc(100% - 32px);text-align:center}
+@media (max-width:600px){header .btn{padding:10px 14px;font-size:14px}}
+</style>
+</head>
+<body>
+<div class="ts" role="note"><div class="wrap"><span>Sample website by Teqnikal Studios. This business is fictional.</span><a href="https://teqnikalstudios.com/#contact">Get a site like this &rarr;</a></div></div>
+<header><div class="wrap"><a class="brand" href="#">Lavender <span>&amp;</span> Line</a><a class="btn demo" href="#">Book now</a></div></header>
+<main>
+<div class="hero"><div class="wrap">
+<span class="kicker">Hair salon &middot; Midtown Detroit</span>
+<h1>Hair you'll love, from a stylist who listens.</h1>
+<p>Cuts, color and styling for every hair type. Book online in under a minute and get a text reminder.</p>
+<div class="ctas"><a class="btn demo" href="#">Book an appointment</a><a class="btn alt" href="#services">Prices</a></div>
+</div></div>
+<section id="services"><div class="wrap">
+<h2>Services and prices</h2>
+<div class="list"><div class="card"><div class="row"><strong>Women's cut</strong><b>$55</b></div><p>Consultation, wash, cut and style.</p></div><div class="card"><div class="row"><strong>Men's cut</strong><b>$35</b></div><p>Clipper or scissor cut, finished and styled.</p></div><div class="card"><div class="row"><strong>Color</strong><b>from $95</b></div><p>Single process, gloss or root touch-up.</p></div><div class="card"><div class="row"><strong>Balayage</strong><b>from $180</b></div><p>Hand-painted, natural-looking highlights.</p></div><div class="card"><div class="row"><strong>Silk press</strong><b>$85</b></div><p>Smooth, shiny and long-lasting.</p></div><div class="card"><div class="row"><strong>Blowout</strong><b>$45</b></div><p>Wash and blowout for any occasion.</p></div></div>
+</div></section>
+<section style="padding-top:0"><div class="wrap">
+<h2>What clients say</h2>
+<div class="list"><div class="quote"><p>&ldquo;She actually listened to what I wanted. Best color I've ever had.&rdquo;</p><cite>Sample review &middot; Midtown</cite></div><div class="quote"><p>&ldquo;Booking online was so easy, and the reminder text saved me.&rdquo;</p><cite>Sample review &middot; Ferndale</cite></div></div>
+</div></section>
+<section style="padding-top:0"><div class="wrap info"><div><h3>Hours</h3><p>Tue to Fri: 10 a.m. to 7 p.m.<br>Sat: 9 a.m. to 4 p.m.<br>Sun and Mon: Closed</p></div><div><h3>Location</h3><p>Midtown, Detroit<br>Free parking in the back</p></div><div><h3>Contact</h3><p>(313) 555-0127<br>New clients welcome</p></div></div></section>
+</main>
+<footer><div class="wrap"><span>&copy; 2026 Lavender &amp; Line Salon. Sample business.</span><span>Website by <a href="https://teqnikalstudios.com/">Teqnikal Studios</a></span></div></footer>
+<div class="note" id="note" role="status" aria-live="polite">This is a sample site. On a real site this button opens online booking.</div>
+<script>
+document.querySelectorAll('.demo').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var n=document.getElementById('note');n.style.display='block';clearTimeout(n.t);n.t=setTimeout(function(){n.style.display='none'},3000)})});
+</script>
+</body>
+</html>
