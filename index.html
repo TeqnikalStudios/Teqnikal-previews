@@ -130,6 +130,13 @@ section.band { padding-block: 104px; }
 .svc ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
 .svc li { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--rule); font-size: 16px; }
 .svc li span:last-child { font-family: var(--mono); font-size: 12px; color: var(--mute); letter-spacing: .06em; text-transform: uppercase; padding-top: 3px; white-space: nowrap; }
+.svc-features { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px !important; background: var(--rule); border: 1px solid var(--rule); }
+.svc-features li { display: grid; gap: 6px; align-content: start; padding: 20px 20px 22px; border: 0; background: var(--paper); }
+.svc-features li span:last-child { padding-top: 0; }
+.svc-features .tag { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--mute); }
+.svc-features strong { font-family: var(--display); font-stretch: 108%; font-weight: 600; font-size: 18px; line-height: 1.2; }
+.svc-features p { margin: 0; font-size: 15px; color: var(--mute); }
+@media (max-width: 520px) { .svc-features { grid-template-columns: 1fr; } }
 @media (max-width: 760px) { .services { grid-template-columns: 1fr; } .svc { padding-right: 0; } .svc + .svc { border-left: 0; padding-left: 0; border-top: 1px solid var(--rule); } }
 
 /* About */
@@ -370,12 +377,12 @@ footer .logo-mark { width: 34px; }
         <article class="svc">
           <span class="label mute">Optional · Managed by AI</span>
           <h3>Autonomous Technology Management Service</h3>
-          <p class="mute">Text or email us a change and it's done. Hosting, security, search and reporting run in the background, and you can add social media any time.</p>
-          <ul>
-            <li><span>Menus, hours, prices and new pages</span><span>Updates</span></li>
-            <li><span>Hosting, SSL, backups and security</span><span>Care</span></li>
-            <li><span>Local SEO and Google Business Profile</span><span>Search</span></li>
-            <li><span>Content Creator for social media</span><span>Add-on</span></li>
+          <p class="mute">We run your website and digital tools after launch, so your team doesn't have to. Send a request by text or email and it's handled, while security, search and reporting run in the background.</p>
+          <ul class="svc-features">
+            <li><span class="tag">Updates</span><strong>Content and page updates</strong><p>Listings, pages, products and pricing, updated on request.</p></li>
+            <li><span class="tag">Care</span><strong>Security and uptime</strong><p>Hosting, SSL, backups, monitoring and software updates.</p></li>
+            <li><span class="tag">Growth</span><strong>Search and analytics</strong><p>SEO, Google Business Profile and a monthly report.</p></li>
+            <li><span class="tag">Add-on</span><strong>Content Creator</strong><p>Social media planning, posting and replies, added any time.</p></li>
           </ul>
         </article>
       </div>
