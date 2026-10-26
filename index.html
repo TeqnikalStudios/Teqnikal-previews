@@ -196,22 +196,28 @@ section.band { padding-block: 104px; }
 @media (max-width: 1000px) { .creations { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 520px) { .creations { grid-template-columns: 1fr; } }
 /* Sample work */
-.samples { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1.5px solid var(--ink); }
-.sample { display: grid; grid-template-rows: auto 1fr; color: inherit; text-decoration: none; }
-.sample + .sample { border-left: 1px solid var(--rule); }
-.sample-shot { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: var(--mist); border-bottom: 1px solid var(--rule); }
-.sample-shot iframe { position: absolute; top: 0; left: 0; width: 1280px; height: 800px; border: 0; transform-origin: 0 0; pointer-events: none; }
-.sample-body { padding: 24px 24px 28px; display: grid; gap: 10px; align-content: start; }
+.samples { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1.5px solid var(--ink); }
+.sample { display: grid; grid-template-rows: auto 1fr; color: inherit; text-decoration: none; background: var(--paper); }
+.sample-shot { aspect-ratio: 16 / 10; overflow: hidden; border-bottom: 1px solid var(--rule); background: var(--s-bg); color: var(--s-ink); display: grid; grid-template-rows: auto 1fr; }
+.mock-bar { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 9px 12px; font: 700 11px/1 var(--s-font); }
+.mock-bar i { display: block; width: 46px; height: 14px; border-radius: var(--s-r); background: var(--s-accent); }
+.mock-hero { padding: 6px 12px 12px; display: grid; gap: 8px; align-content: center; }
+.mock-hero b { font: 700 clamp(15px, 1.9vw, 21px)/1.08 var(--s-font); color: var(--s-ink); }
+.mock-hero b span { color: var(--s-accent); }
+.mock-hero s { display: block; height: 6px; width: 70%; background: currentColor; opacity: .18; text-decoration: none; }
+.mock-hero s + s { width: 52%; }
+.mock-hero u { display: block; width: 84px; height: 18px; border-radius: var(--s-r); background: var(--s-accent); margin-top: 2px; }
+.sample-body { padding: 22px 22px 26px; display: grid; gap: 10px; align-content: start; }
 .sample-body p { font-size: 15px; }
 .sample-body .more { font-family: var(--mono); font-size: 13px; letter-spacing: .04em; margin-top: 6px; }
 a.sample:hover .more { text-decoration: underline; }
 a.sample:focus-visible { outline: 2px solid var(--ink); outline-offset: -4px; }
-.sample-cta { background: var(--ink); color: var(--paper); padding: 28px 24px; display: grid; gap: 12px; align-content: start; }
+.sample-cta { grid-column: span 2; background: var(--ink); color: var(--paper); padding: 28px 24px; display: grid; gap: 12px; align-content: center; }
 .sample-cta .mute { color: var(--mute-inv); }
 .sample-cta .btn-solid { background: var(--paper); color: var(--ink); border-color: var(--paper); justify-self: start; margin-top: 6px; }
 .sample-cta .btn-solid:hover { background: var(--ink); color: var(--paper); }
-@media (max-width: 1000px) { .samples { grid-template-columns: repeat(2, minmax(0, 1fr)); } .sample:nth-child(3) { border-left: 0; } .samples > :nth-child(n+3) { border-top: 1px solid var(--rule); } }
-@media (max-width: 560px) { .samples { grid-template-columns: 1fr; } .samples > * + * { border-left: 0 !important; border-top: 1px solid var(--rule); } }
+@media (max-width: 1000px) { .samples { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .samples { grid-template-columns: 1fr; } .sample-cta { grid-column: auto; } }
 .split { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); border: 1.5px solid var(--ink); }
 .split-col { padding: 32px; display: grid; gap: 20px; align-content: start; }
 .split-human { background: var(--ink); color: var(--paper); }
@@ -431,21 +437,33 @@ footer .logo-mark { width: 34px; }
         <span class="label mute">Sample work</span>
         <div>
           <h2 id="work-title">See what we build.</h2>
-          <p class="mute">These are sample websites we designed for made-up Detroit businesses, so you can click around a finished site. Yours is designed around your business, and you see a free preview before you pay.</p>
+          <p class="mute">These are sample websites we designed for made-up Detroit businesses like roofers, salons and restaurants, so you can click around a finished site. Yours is designed around your business, and you see a free preview before you pay.</p>
         </div>
       </div>
       <div class="samples">
-        <a class="sample" href="/samples/motor-city-mechanical/" target="_blank" rel="noopener">
-          <div class="sample-shot"><iframe src="/samples/motor-city-mechanical/" title="Preview of the Motor City Mechanical sample site" loading="lazy" tabindex="-1" aria-hidden="true"></iframe></div>
-          <div class="sample-body"><span class="label mute">Home services</span><h3>Motor City Mechanical</h3><p class="mute">Heating, cooling and plumbing. Built to get the phone ringing, with tap-to-call, reviews and a service area.</p><span class="more">View sample →</span></div>
+        <a class="sample" href="/samples/great-lakes-summit-roofing/" target="_blank" rel="noopener">
+          <div class="sample-shot" aria-hidden="true" style="--s-bg:#ffffff;--s-ink:#1b1e23;--s-accent:#c8102e;--s-font:system-ui, sans-serif;--s-r:3px"><div class="mock-bar"><span>GREAT LAKES SUMMIT</span><i></i></div><div class="mock-hero"><b>Storm damage? We'll fix your <span>roof right.</span></b><s></s><s></s><u></u></div></div>
+          <div class="sample-body"><span class="label mute">Roofing</span><h3>Great Lakes Summit Roofing</h3><p class="mute">Storm damage and roof repair. Free inspections, insurance help and tap-to-call.</p><span class="more">View sample →</span></div>
         </a>
-        <a class="sample" href="/samples/brush-park-bakery/" target="_blank" rel="noopener">
-          <div class="sample-shot"><iframe src="/samples/brush-park-bakery/" title="Preview of the Brush Park Bakery sample site" loading="lazy" tabindex="-1" aria-hidden="true"></iframe></div>
-          <div class="sample-body"><span class="label mute">Food and drink</span><h3>Brush Park Bakery</h3><p class="mute">A bakery and cafe with a full menu, hours, and ordering ahead for pickup.</p><span class="more">View sample →</span></div>
+        <a class="sample" href="/samples/lavender-and-line-salon/" target="_blank" rel="noopener">
+          <div class="sample-shot" aria-hidden="true" style="--s-bg:#f3edf8;--s-ink:#2b2233;--s-accent:#7a4fa3;--s-font:Georgia, serif;--s-r:999px"><div class="mock-bar"><span>Lavender &amp; Line</span><i></i></div><div class="mock-hero"><b>Hair you'll love, from a stylist <span>who listens.</span></b><s></s><s></s><u></u></div></div>
+          <div class="sample-body"><span class="label mute">Hair salon</span><h3>Lavender &amp; Line Salon</h3><p class="mute">Services and prices up front, with online booking and text reminders.</p><span class="more">View sample →</span></div>
+        </a>
+        <a class="sample" href="/samples/riverwalk-kitchen/" target="_blank" rel="noopener">
+          <div class="sample-shot" aria-hidden="true" style="--s-bg:#f1efe6;--s-ink:#1f2a24;--s-accent:#2f6b4f;--s-font:Georgia, serif;--s-r:6px"><div class="mock-bar"><span>Riverwalk Kitchen</span><i></i></div><div class="mock-hero"><b>Fresh Michigan food, <span>right by the river.</span></b><s></s><s></s><u></u></div></div>
+          <div class="sample-body"><span class="label mute">Restaurant</span><h3>Riverwalk Kitchen</h3><p class="mute">Menu, hours, reservations and takeout ordering in one simple page.</p><span class="more">View sample →</span></div>
+        </a>
+        <a class="sample" href="/samples/motor-city-mechanical/" target="_blank" rel="noopener">
+          <div class="sample-shot" aria-hidden="true" style="--s-bg:#0e1f3a;--s-ink:#ffffff;--s-accent:#f26a1b;--s-font:system-ui, sans-serif;--s-r:5px"><div class="mock-bar"><span>MOTOR CITY MECHANICAL</span><i></i></div><div class="mock-hero"><b>No heat? No problem. <span>We're on the way.</span></b><s></s><s></s><u></u></div></div>
+          <div class="sample-body"><span class="label mute">Home services</span><h3>Motor City Mechanical</h3><p class="mute">Heating, cooling and plumbing, built to get the phone ringing.</p><span class="more">View sample →</span></div>
         </a>
         <a class="sample" href="/samples/corktown-cuts/" target="_blank" rel="noopener">
-          <div class="sample-shot"><iframe src="/samples/corktown-cuts/" title="Preview of the Corktown Cuts sample site" loading="lazy" tabindex="-1" aria-hidden="true"></iframe></div>
-          <div class="sample-body"><span class="label mute">Personal care</span><h3>Corktown Cuts</h3><p class="mute">A barbershop with prices, barber profiles and online booking front and center.</p><span class="more">View sample →</span></div>
+          <div class="sample-shot" aria-hidden="true" style="--s-bg:#0f0f10;--s-ink:#f2efe8;--s-accent:#d4a64a;--s-font:system-ui, sans-serif;--s-r:0"><div class="mock-bar"><span>CORKTOWN CUTS</span><i></i></div><div class="mock-hero"><b>Sharp cuts. <span>Good company.</span></b><s></s><s></s><u></u></div></div>
+          <div class="sample-body"><span class="label mute">Barbershop</span><h3>Corktown Cuts</h3><p class="mute">Prices, barber profiles and online booking front and center.</p><span class="more">View sample →</span></div>
+        </a>
+        <a class="sample" href="/samples/brush-park-bakery/" target="_blank" rel="noopener">
+          <div class="sample-shot" aria-hidden="true" style="--s-bg:#fbf4e9;--s-ink:#3a2418;--s-accent:#b5532b;--s-font:Georgia, serif;--s-r:999px"><div class="mock-bar"><span>Brush Park Bakery</span><i></i></div><div class="mock-hero"><b>Bread worth <span>waking up for.</span></b><s></s><s></s><u></u></div></div>
+          <div class="sample-body"><span class="label mute">Bakery and cafe</span><h3>Brush Park Bakery</h3><p class="mute">A full menu, hours, and ordering ahead for pickup.</p><span class="more">View sample →</span></div>
         </a>
         <div class="sample-cta">
           <h3>Want to see yours?</h3>
@@ -666,20 +684,6 @@ var FORM_ENDPOINT = 'https://n8n.cliphooligan.com/webhook/teqnikal-contact';
   });
   window.addEventListener('popstate', function () { show(location.hash); });
   show(location.hash, false);
-})();
-
-// Sample previews: scale each 1280px-wide live preview to fit its card
-(function () {
-  var shots = document.querySelectorAll('.sample-shot');
-  function fit() {
-    shots.forEach(function (s) {
-      var f = s.querySelector('iframe');
-      if (f && s.clientWidth) f.style.transform = 'scale(' + (s.clientWidth / 1280) + ')';
-    });
-  }
-  if ('ResizeObserver' in window) { var ro = new ResizeObserver(fit); shots.forEach(function (s) { ro.observe(s); }); }
-  window.addEventListener('resize', fit);
-  fit();
 })();
 
 // Copy email
