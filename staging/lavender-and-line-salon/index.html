@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Lavender &amp; Line Salon | Sample website by Teqnikal Studios</title>
+<meta name="description" content="A sample hair salon website built by Teqnikal Studios. Lavender &amp; Line is a fictional business.">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;1,400;1,500&family=Jost:wght@400;500&display=swap">
+<style>
+*{box-sizing:border-box}
+.btn{white-space:nowrap}
+html{scroll-behavior:smooth}
+body{margin:0;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+p,h1,h2,h3,h4{margin:0}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.ph{position:relative;overflow:hidden;background:var(--ph,#ddd)}
+.ph img{width:100%;height:100%;object-fit:cover;transition:opacity .3s}
+.ts{background:#0a0a0a;color:#f2f2f2;font:500 12.5px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif}
+.ts .wrap{display:flex;justify-content:space-between;gap:12px;padding-top:9px;padding-bottom:9px}
+.ts a{font-weight:600;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.note{position:fixed;left:50%;bottom:24px;transform:translate(-50%,16px);opacity:0;pointer-events:none;background:#111;color:#fff;padding:12px 18px;border-radius:8px;font:500 14px/1.4 system-ui,sans-serif;max-width:calc(100% - 32px);transition:.25s;z-index:50;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.note.show{opacity:1;transform:translate(-50%,0)}
+.credit{font:13px/1.5 system-ui,sans-serif}
+.credit .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:22px;padding-bottom:22px}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+@media (max-width:640px){.ts .wrap{font-size:11.5px}}
+
+.credit{background:#241b2b;color:#a99db3}
+
+:root{--ink:#2a2230;--plum:#5d3f78;--lav:#efe9f4;--paper:#fcfbfd;--mute:#6e6476;--line:#e5dcec;--ph:#d8cde2}
+body{background:var(--paper);color:var(--ink);font:16px/1.65 'Jost',system-ui,sans-serif}
+h1,h2,h3{font-family:'Cormorant',Georgia,serif;font-weight:500;line-height:1.02;letter-spacing:-.005em}
+.btn{display:inline-flex;align-items:center;padding:14px 28px;font-weight:500;font-size:14px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1px solid transparent;transition:.2s}
+.btn-plum{background:var(--plum);color:#fff}.btn-plum:hover{background:#4b3163}
+.btn-line{border-color:var(--ink)}.btn-line:hover{background:var(--ink);color:#fff}
+.btn-white{background:#fff;color:var(--ink)}
+.eyebrow{font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--plum);font-weight:500}
+header .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding-top:22px;padding-bottom:22px}
+header nav{display:flex;gap:28px;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+header nav a{text-decoration:none;color:var(--mute)}header nav a:hover{color:var(--ink)}
+.brand{font:500 32px/1 'Cormorant',serif;text-decoration:none;text-align:center}
+.brand i{color:var(--plum)}
+header .btn{justify-self:end}
+.hero{padding:0 24px}
+.hero .frame{position:relative;max-width:1400px;margin:0 auto;min-height:640px;display:flex;align-items:center;color:#fff}
+.hero .ph{position:absolute;inset:0}
+.hero .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(32,22,40,.78),rgba(32,22,40,.35) 60%,rgba(32,22,40,.1))}
+.hero .in{position:relative;padding:80px clamp(24px,6vw,96px);max-width:720px}
+.hero .eyebrow{color:#e3d2f2}
+.hero h1{font-size:clamp(52px,7vw,96px);margin:18px 0 22px}
+.hero h1 i{font-weight:400}
+.hero p{font-size:18px;color:rgba(255,255,255,.86);max-width:42ch;margin-bottom:34px}
+.sec{padding:110px 0}
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.intro h2{font-size:clamp(40px,4.6vw,62px);margin:14px 0 20px}
+.intro p{color:var(--mute);font-size:17px;margin-bottom:14px;max-width:48ch}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:end}
+.duo .ph:first-child{aspect-ratio:3/4}
+.duo .ph:last-child{aspect-ratio:3/5}
+.prices{background:var(--lav)}
+.prices .head{text-align:center;margin-bottom:56px}
+.prices h2{font-size:clamp(40px,4.6vw,62px);margin-top:12px}
+.plist{display:grid;grid-template-columns:1fr 1fr;gap:0 80px;max-width:960px;margin:0 auto}
+.pi{padding:22px 0;border-bottom:1px solid var(--line)}
+.pi div{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.pi h3{font-size:28px}
+.pi b{font-weight:500;color:var(--plum);white-space:nowrap}
+.pi p{color:var(--mute);font-size:15px;margin-top:2px}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gal .ph{aspect-ratio:3/4}
+.gal .ph:nth-child(even){transform:translateY(40px)}
+.quotes{display:grid;grid-template-columns:1fr 1fr;gap:64px;padding-top:40px}
+blockquote{margin:0;font-family:'Cormorant',serif;font-size:clamp(28px,2.8vw,38px);line-height:1.2;font-style:italic}
+cite{display:block;margin-top:16px;font:normal 13px 'Jost',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.book{background:var(--plum);color:#fff}
+.book .wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0}
+.book .ph{min-height:460px}
+.book .txt{padding:90px 64px;display:flex;flex-direction:column;justify-content:center}
+.book .eyebrow{color:#e3d2f2}
+.book h2{font-size:clamp(40px,4.4vw,58px);margin:14px 0 18px}
+.book p{color:rgba(255,255,255,.8);margin-bottom:30px;max-width:42ch}
+.visit .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;padding-top:80px;padding-bottom:80px;text-align:center}
+.visit h3{font-size:30px;margin-bottom:10px}
+.visit p{color:var(--mute)}
+@media (max-width:900px){header .wrap{grid-template-columns:1fr auto}header nav{display:none}.brand{text-align:left}.intro,.plist,.quotes,.book .wrap,.visit .wrap{grid-template-columns:1fr}.gal{grid-template-columns:1fr 1fr}.gal .ph:nth-child(even){transform:none}.book .txt{padding:64px 28px}.hero{padding:0}}
+
+</style>
+</head>
+<body>
+<div class="ts" role="note"><div class="wrap"><span>Sample website by Teqnikal Studios. This business is fictional.</span><a href="https://teqnikalstudios.com/#contact">Get a site like this &rarr;</a></div></div>
+
+<header><div class="wrap">
+  <nav><a href="#prices">Services</a><a href="#work">Our work</a><a href="#visit">Visit</a></nav>
+  <a class="brand" href="#">Lavender <i>&amp;</i> Line</a>
+  <a class="btn btn-plum demo" href="#">Book now</a>
+</div></header>
+
+<section class="hero"><div class="frame">
+  <div class="ph"><img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=2000&q=72" alt="Modern hair salon with black chairs, round mirrors and a brick wall" loading="eager" decoding="async" onerror="this.style.opacity=0"></div>
+  <div class="in">
+    <span class="eyebrow">Hair salon &middot; Midtown Detroit</span>
+    <h1>Hair you'll love, from a stylist <i>who listens.</i></h1>
+    <p>Cuts, color and styling for every hair type. Book online in under a minute and get a text reminder.</p>
+    <a class="btn btn-white demo" href="#">Book an appointment</a>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap intro">
+  <div>
+    <span class="eyebrow">The studio</span>
+    <h2>Unhurried appointments. Honest advice.</h2>
+    <p>Every visit starts with a real conversation about your hair, your routine and how much time you want to spend on it each morning.</p>
+    <p>Then we get to work, and we tell you exactly what it costs before we start.</p>
+  </div>
+  <div class="duo">
+    <div class="ph"><img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=800&q=72" alt="Stylist blow-drying a client's hair with a round brush" loading="lazy" decoding="async" onerror="this.style.opacity=0"></div>
+    <div class="ph"><img src="https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?auto=format&fit=crop&w=800&q=72" alt="Stylist cutting a client's hair" loading="lazy" decoding="async" onerror="this.style.opacity=0"></div>
+  </div>
+</div></section>
+
+<section class="sec prices" id="prices"><div class="wrap">
+  <div class="head"><span class="eyebrow">Services and prices</span><h2>The menu.</h2></div>
+  <div class="plist">
+    <div class="pi"><div><h3>Women's cut</h3><b>$55</b></div><p>Consultation, wash, cut and style.</p></div>
+    <div class="pi"><div><h3>Men's cut</h3><b>$35</b></div><p>Clipper or scissor cut, finished and styled.</p></div>
+    <div class="pi"><div><h3>Color</h3><b>from $95</b></div><p>Single process, gloss or root touch-up.</p></div>
+    <div class="pi"><div><h3>Balayage</h3><b>from $180</b></div><p>Hand-painted, natural-looking highlights.</p></div>
+    <div class="pi"><div><h3>Silk press</h3><b>$85</b></div><p>Smooth, shiny and long-lasting.</p></div>
+    <div class="pi"><div><h3>Blowout</h3><b>$45</b></div><p>Wash and blowout for any occasion.</p></div>
+  </div>
+</div></section>
+
+<section class="sec" id="work" style="padding-bottom:150px"><div class="wrap">
+  <div class="gal">
+    <div class="ph"><img src="https://images.unsplash.com/photo-1595475884562-073c30d45670?auto=format&fit=crop&w=700&q=72" alt="Hands holding brushes, scissors and a tinting brush" loading="lazy" decoding="async" onerror="this.style.opacity=0"></div>
+    <div class="ph"><img src="https://images.unsplash.com/photo-1774660810725-fb04e002003d?auto=format&fit=crop&w=700&q=72" alt="Stylist creating an updo for a client" loading="lazy" decoding="async" onerror="this.style.opacity=0"></div>
+    <div class="ph"><img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=700&q=72" alt="Salon chairs facing round mirrors" loading="lazy" decoding="async" onerror="this.style.opacity=0"></div>
+    <div class="ph"><img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=700&q=72" alt="Stylist curling a client's hair" loading="lazy" decoding="async" onerror="this.style.opacity=0"></div>
+  </div>
+  <div class="quotes">
+    <figure style="margin:0"><blockquote>&ldquo;She actually listened to what I wanted. Best color I've ever had.&rdquo;</blockquote><cite>Sample review &middot; Midtown</cite></figure>
+    <figure style="margin:0"><blockquote>&ldquo;Booking online was easy, and the reminder text saved me.&rdquo;</blockquote><cite>Sample review &middot; Ferndale</cite></figure>
+  </div>
+</div></section>
+
+<section class="book"><div class="wrap">
+  <div class="ph"><img src="https://images.unsplash.com/photo-1781450090585-1a511b7066d9?auto=format&fit=crop&w=1400&q=72" alt="Modern salon interior with chairs and mirrors" loading="lazy" decoding="async" onerror="this.style.opacity=0"></div>
+  <div class="txt"><span class="eyebrow">New clients welcome</span><h2>Book your first visit.</h2><p>Pick a stylist, choose a time and you're set. We'll send a reminder the day before.</p><div><a class="btn btn-white demo" href="#">Book online</a></div></div>
+</div></section>
+
+<section class="visit" id="visit"><div class="wrap">
+  <div><h3>Hours</h3><p>Tue to Fri: 10 a.m. to 7 p.m.<br>Sat: 9 a.m. to 4 p.m.<br>Sun and Mon: Closed</p></div>
+  <div><h3>Location</h3><p>Midtown, Detroit<br>Free parking in the back</p></div>
+  <div><h3>Contact</h3><p>(313) 555-0127<br>New clients welcome</p></div>
+</div></section>
+
+<div class="credit"><div class="wrap"><span>&copy; 2026 Lavender &amp; Line Salon. Sample business. Photos via Unsplash.</span><span>Website by <a href="https://teqnikalstudios.com/">Teqnikal Studios</a></span></div></div>
+<div class="note" id="note" role="status" aria-live="polite">This is a sample site. On a real site this button opens online booking.</div>
+<script>
+document.querySelectorAll('.demo').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var n=document.getElementById('note');n.classList.add('show');clearTimeout(n.t);n.t=setTimeout(function(){n.classList.remove('show')},3200)})});
+</script>
+</body>
+</html>

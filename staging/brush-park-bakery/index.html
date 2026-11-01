@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Brush Park Bakery | Sample website by Teqnikal Studios</title>
+<meta name="description" content="A sample bakery website built by Teqnikal Studios. Brush Park Bakery is a fictional business.">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=DM+Sans:wght@400;500;600;700&display=swap">
+<style>
+*{box-sizing:border-box}
+.btn{white-space:nowrap}
+html{scroll-behavior:smooth}
+body{margin:0;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+p,h1,h2,h3,h4{margin:0}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.ph{position:relative;overflow:hidden;background:var(--ph,#ddd)}
+.ph img{width:100%;height:100%;object-fit:cover;transition:opacity .3s}
+.ts{background:#0a0a0a;color:#f2f2f2;font:500 12.5px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif}
+.ts .wrap{display:flex;justify-content:space-between;gap:12px;padding-top:9px;padding-bottom:9px}
+.ts a{font-weight:600;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.note{position:fixed;left:50%;bottom:24px;transform:translate(-50%,16px);opacity:0;pointer-events:none;background:#111;color:#fff;padding:12px 18px;border-radius:8px;font:500 14px/1.4 system-ui,sans-serif;max-width:calc(100% - 32px);transition:.25s;z-index:50;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.note.show{opacity:1;transform:translate(-50%,0)}
+.credit{font:13px/1.5 system-ui,sans-serif}
+.credit .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:22px;padding-bottom:22px}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+@media (max-width:640px){.ts .wrap{font-size:11.5px}}
+
+.credit{background:#2a1a11;color:#b39a88}
+
+:root{--cream:#fbf5ea;--paper:#fffaf2;--crust:#b5532b;--crust-d:#8f3d1c;--cocoa:#3a2418;--mute:#7a6253;--line:#e7d7bf;--ph:#d9c4a5}
+body{background:var(--paper);color:var(--cocoa);font:16px/1.65 'DM Sans',system-ui,sans-serif}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1.04;letter-spacing:-.015em}
+.btn{display:inline-flex;align-items:center;padding:14px 24px;font-weight:600;font-size:15px;text-decoration:none;border-radius:99px;border:1.5px solid transparent;transition:.2s}
+.btn-crust{background:var(--crust);color:#fff}.btn-crust:hover{background:var(--crust-d)}
+.btn-line{border-color:var(--cocoa)}.btn-line:hover{background:var(--cocoa);color:var(--cream)}
+.eyebrow{font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--crust)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:22px;padding-bottom:22px}
+.brand{font:600 26px/1 'Fraunces',serif;text-decoration:none;letter-spacing:-.01em}
+.brand i{color:var(--crust)}
+header nav{display:flex;gap:30px;font-size:14.5px;font-weight:500}
+header nav a{text-decoration:none;color:var(--mute)}header nav a:hover{color:var(--cocoa)}
+.hero .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center;padding-top:30px;padding-bottom:90px}
+.hero h1{font-size:clamp(50px,6.4vw,88px);margin:18px 0 22px}
+.hero h1 i{font-weight:400;color:var(--crust)}
+.hero p{color:var(--mute);font-size:18px;max-width:42ch;margin-bottom:32px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.hero-img{position:relative}
+.hero-img .ph{aspect-ratio:4/5;border-radius:220px 220px 14px 14px}
+.badge{position:absolute;left:-28px;bottom:48px;background:var(--cocoa);color:var(--cream);width:132px;height:132px;border-radius:50%;display:grid;place-items:center;text-align:center;line-height:1.15;transform:rotate(-8deg)}
+.badge b{display:block;font:600 30px/1 'Fraunces',serif}
+.badge span{font-size:12px;letter-spacing:.06em}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.strip .ph{aspect-ratio:1/1}
+.sec{padding:100px 0}
+.center{text-align:center;max-width:620px;margin:0 auto 54px}
+.center h2{font-size:clamp(38px,4.6vw,60px);margin:12px 0 14px}
+.center p{color:var(--mute);font-size:17px}
+.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.col{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.col .ph{aspect-ratio:16/10}
+.col .in{padding:26px 28px 14px}
+.col h3{font-size:28px;margin-bottom:8px}
+.it{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px dashed var(--line)}
+.it b{font-weight:600}
+.it small{display:block;color:var(--mute);font-size:14px}
+.it span{font-weight:700;color:var(--crust);white-space:nowrap}
+.story{background:var(--cocoa);color:var(--cream)}
+.story .wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;padding-top:100px;padding-bottom:100px}
+.story .ph{aspect-ratio:1/1;border-radius:14px}
+.story h2{font-size:clamp(38px,4.4vw,58px);margin:12px 0 18px}
+.story .eyebrow{color:#e7a07c}
+.story>div>div>p{color:rgba(251,245,234,.78);margin-bottom:30px}
+.facts{display:grid;gap:22px}
+.fact{display:grid;grid-template-columns:90px 1fr;gap:18px;padding-top:20px;border-top:1px solid rgba(251,245,234,.18)}
+.fact b{font:600 32px/1 'Fraunces',serif;color:#e7a07c}
+.fact h3{font:700 16px 'DM Sans',sans-serif;margin-bottom:2px}
+.fact p{color:rgba(251,245,234,.72);font-size:14.5px}
+.order .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:0;background:var(--cream);border-radius:18px;overflow:hidden;padding:0}
+.order .txt{padding:64px 56px}
+.order h2{font-size:clamp(34px,3.8vw,48px);margin:12px 0 14px}
+.order p{color:var(--mute);margin-bottom:28px}
+.order .ph{min-height:380px}
+.visit .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;padding-top:90px;padding-bottom:90px}
+.visit h2{font-size:42px;margin-bottom:22px}
+.hours div{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line)}
+.hours span{color:var(--mute)}
+.visit p{color:var(--mute);margin-bottom:12px}
+@media (max-width:900px){header nav{display:none}.hero .wrap,.story .wrap,.order .wrap,.visit .wrap{grid-template-columns:1fr}.menu{grid-template-columns:1fr}.strip{grid-template-columns:1fr 1fr}.badge{left:12px}.order .txt{padding:44px 28px}}
+
+</style>
+</head>
+<body>
+<div class="ts" role="note"><div class="wrap"><span>Sample website by Teqnikal Studios. This business is fictional.</span><a href="https://teqnikalstudios.com/#contact">Get a site like this &rarr;</a></div></div>
+
+<header><div class="wrap"><a class="brand" href="#">Brush Park <i>Bakery</i></a>
+<nav><a href="#menu">Menu</a><a href="#story">Our story</a><a href="#visit">Visit</a></nav>
+<a class="btn btn-crust demo" href="#">Order for pickup</a></div></header>
+
+<section class="hero"><div class="wrap">
+  <div>
+    <span class="eyebrow">Baked in Detroit since sunrise</span>
+    <h1>Bread worth <i>waking up</i> for.</h1>
+    <p>Naturally leavened sourdough, flaky croissants and the city's favorite cardamom buns, baked in small batches every morning.</p>
+    <div class="ctas"><a class="btn btn-crust demo" href="#">Order for pickup</a><a class="btn btn-line" href="#menu">See the menu</a></div>
+  </div>
+  <div class="hero-img">
+    <div class="ph"><img src="https://images.unsplash.com/photo-1568254183919-78a4f43a2877?auto=format&fit=crop&w=1200&q=72" alt="Fresh loaves of bread on bakery shelves" loading="eager" decoding="async" onerror="this.style.opacity=0"></div>
+    <div class="badge"><div><b>6 a.m.</b><span>fresh out<br>of the oven</span></div></div>
+  </div>
+</div></section>
+
+<div class="strip">
+  <div class="ph"><img src="https://images.unsplash.com/photo-1623334044303-241021148842?auto=format&fit=crop&w=700&q=72" alt="Croissants on a table" loading="lazy" decoding="async" onerror="this.style.opacity=0"></div>
+  <div class="ph"><img src="https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?auto=format&fit=crop&w=700&q=72" alt="Baker shaping dough beside a rolling pin" loading="lazy" decoding="async" onerror="this.style.opacity=0"></div>
+  <div class="ph"><img src="https://images.unsplash.com/photo-1534432182912-63863115e106?auto=format&fit=crop&w=700&q=72" alt="Pastries and crumb cake on display" loading="lazy" decoding="async" onerror="this.style.opacity=0"></div>
+  <div class="ph"><img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?auto=format&fit=crop&w=700&q=72" alt="Bread in a wicker basket" loading="lazy" decoding="async" onerror="this.style.opacity=0"></div>
+</div>
+
+<section class="sec" id="menu"><div class="wrap">
+  <div class="center"><span class="eyebrow">Today's menu</span><h2>Made from scratch, every morning.</h2><p>When it's gone, it's gone. Order ahead to save your loaf.</p></div>
+  <div class="menu">
+    <div class="col"><div class="ph"><img src="https://images.unsplash.com/photo-1515182629504-727d7753751f?auto=format&fit=crop&w=800&q=72" alt="Baked loaves on a rack" loading="lazy" decoding="async" onerror="this.style.opacity=0"></div><div class="in"><h3>Bread</h3>
+      <div class="it"><div><b>Country sourdough</b><small>48-hour ferment, crackly crust</small></div><span>$9</span></div><div class="it"><div><b>Seeded rye</b><small>Caraway, sunflower, flax</small></div><span>$10</span></div><div class="it"><div><b>Focaccia</b><small>Rosemary and sea salt</small></div><span>$7</span></div></div></div>
+    <div class="col"><div class="ph"><img src="https://images.unsplash.com/photo-1583338917451-face2751d8d5?auto=format&fit=crop&w=800&q=72" alt="Fruit tarts and cakes in a bakery case" loading="lazy" decoding="async" onerror="this.style.opacity=0"></div><div class="in"><h3>Pastry</h3>
+      <div class="it"><div><b>Butter croissant</b><small>Laminated over three days</small></div><span>$4.50</span></div><div class="it"><div><b>Cardamom bun</b><small>Our most popular bake</small></div><span>$5</span></div><div class="it"><div><b>Seasonal galette</b><small>Michigan fruit, changes weekly</small></div><span>$6</span></div></div></div>
+    <div class="col"><div class="ph"><img src="https://images.unsplash.com/photo-1511018556340-d16986a1c194?auto=format&fit=crop&w=800&q=72" alt="Inside a neighborhood bakery" loading="lazy" decoding="async" onerror="this.style.opacity=0"></div><div class="in"><h3>Coffee</h3>
+      <div class="it"><div><b>Drip coffee</b><small>Roasted locally</small></div><span>$3</span></div><div class="it"><div><b>Latte</b><small>Oat or whole milk</small></div><span>$5</span></div><div class="it"><div><b>Chai</b><small>House-made spice blend</small></div><span>$5</span></div></div></div>
+  </div>
+</div></section>
+
+<section class="story" id="story"><div class="wrap">
+  <div class="ph"><img src="https://images.unsplash.com/photo-1577595927087-dedbe84f0e4d?auto=format&fit=crop&w=1100&q=72" alt="Assorted breads in wicker baskets" loading="lazy" decoding="async" onerror="this.style.opacity=0"></div>
+  <div>
+    <span class="eyebrow">Our story</span>
+    <h2>Small batches, slow dough.</h2>
+    <p>A neighborhood bakery built on early mornings and a little patience.</p>
+    <div class="facts">
+      <div class="fact"><b>48 hr</b><div><h3>Slow fermentation</h3><p>Our sourdough rests for two days for deeper flavor and an easier-to-digest loaf.</p></div></div>
+      <div class="fact"><b>100%</b><div><h3>Made from scratch</h3><p>No mixes and no frozen dough. Butter, flour, salt, water and time.</p></div></div>
+      <div class="fact"><b>MI</b><div><h3>Local ingredients</h3><p>Flour from Michigan mills and fruit from farms within a two-hour drive.</p></div></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec order"><div class="wrap">
+  <div class="txt"><span class="eyebrow">Skip the line</span><h2>Order tonight, pick up warm.</h2><p>Reserve your loaves the night before. Catering trays are available for offices and events.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-crust demo" href="#">Start an order</a><a class="btn btn-line demo" href="#">Catering</a></div></div>
+  <div class="ph"><img src="https://images.unsplash.com/photo-1620830958756-46335282c574?auto=format&fit=crop&w=1100&q=72" alt="Bread on a glass display counter" loading="lazy" decoding="async" onerror="this.style.opacity=0"></div>
+</div></section>
+
+<section class="visit" id="visit"><div class="wrap">
+  <div><h2>Hours</h2><div class="hours">
+    <div><b>Tuesday to Friday</b><span>6:30 a.m. to 3 p.m.</span></div><div><b>Saturday</b><span>7 a.m. to 3 p.m.</span></div>
+    <div><b>Sunday</b><span>8 a.m. to 1 p.m.</span></div><div><b>Monday</b><span>Closed</span></div></div></div>
+  <div><h2>Find us</h2><p>In the heart of Brush Park, Detroit. Street parking and a bike rack out front.</p><p>(313) 555-0178</p><a class="btn btn-line demo" href="#">Get directions</a></div>
+</div></section>
+
+<div class="credit"><div class="wrap"><span>&copy; 2026 Brush Park Bakery. Sample business. Photos via Unsplash.</span><span>Website by <a href="https://teqnikalstudios.com/">Teqnikal Studios</a></span></div></div>
+<div class="note" id="note" role="status" aria-live="polite">This is a sample site. On a real site this button starts a pickup order.</div>
+<script>
+document.querySelectorAll('.demo').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var n=document.getElementById('note');n.classList.add('show');clearTimeout(n.t);n.t=setTimeout(function(){n.classList.remove('show')},3200)})});
+</script>
+</body>
+</html>

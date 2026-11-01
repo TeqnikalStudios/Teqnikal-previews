@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Motor City Mechanical | Sample website by Teqnikal Studios</title>
+<meta name="description" content="A sample HVAC and plumbing website built by Teqnikal Studios. Motor City Mechanical is a fictional business.">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap">
+<style>
+*{box-sizing:border-box}
+.btn{white-space:nowrap}
+html{scroll-behavior:smooth}
+body{margin:0;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+p,h1,h2,h3,h4{margin:0}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.ph{position:relative;overflow:hidden;background:var(--ph,#ddd)}
+.ph img{width:100%;height:100%;object-fit:cover;transition:opacity .3s}
+.ts{background:#0a0a0a;color:#f2f2f2;font:500 12.5px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif}
+.ts .wrap{display:flex;justify-content:space-between;gap:12px;padding-top:9px;padding-bottom:9px}
+.ts a{font-weight:600;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.note{position:fixed;left:50%;bottom:24px;transform:translate(-50%,16px);opacity:0;pointer-events:none;background:#111;color:#fff;padding:12px 18px;border-radius:8px;font:500 14px/1.4 system-ui,sans-serif;max-width:calc(100% - 32px);transition:.25s;z-index:50;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.note.show{opacity:1;transform:translate(-50%,0)}
+.credit{font:13px/1.5 system-ui,sans-serif}
+.credit .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:22px;padding-bottom:22px}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+@media (max-width:640px){.ts .wrap{font-size:11.5px}}
+
+.credit{background:#09121f;color:#8392aa}
+
+:root{--navy:#0f1d33;--navy-2:#172a49;--orange:#ef6a1f;--orange-d:#d2560f;--soft:#f2f5f9;--ink:#0f1d33;--mute:#56627a;--line:#dfe5ee;--ph:#33415a}
+body{background:#fff;color:var(--ink);font:16px/1.6 'Archivo',system-ui,sans-serif}
+h1,h2,h3{font-family:'Archivo',sans-serif;font-weight:800;line-height:1.02;letter-spacing:-.02em}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:15px 24px;font-weight:700;font-size:15px;text-decoration:none;border-radius:6px;border:2px solid transparent;transition:.2s}
+.btn-orange{background:var(--orange);color:#fff}.btn-orange:hover{background:var(--orange-d)}
+.btn-ghost{border-color:rgba(255,255,255,.45);color:#fff}.btn-ghost:hover{background:rgba(255,255,255,.08)}
+.eyebrow{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--orange)}
+header{background:var(--navy);color:#fff}
+header .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand .mk{width:40px;height:40px;border-radius:8px;background:var(--orange);display:grid;place-items:center;font-weight:800;font-size:15px}
+.brand b{display:block;font-weight:800;font-size:18px;letter-spacing:-.01em;line-height:1.1}
+.brand small{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#9fb0cc}
+header nav{display:flex;gap:28px;font-size:14.5px;font-weight:600}
+header nav a{text-decoration:none;color:#c3cee0}header nav a:hover{color:#fff}
+.hero{position:relative;color:#fff;background:var(--navy)}
+.hero .ph{position:absolute;inset:0 0 0 42%;--ph:#1d2c46}
+.hero .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--navy) 0%,rgba(15,29,51,.4) 40%,rgba(15,29,51,.1))}
+.hero .wrap{position:relative;padding-top:100px;padding-bottom:110px}
+.hero .in{max-width:600px}
+.pill{display:inline-block;background:rgba(255,255,255,.1);padding:7px 14px;border-radius:99px;font-size:13px;font-weight:600}
+.hero h1{font-size:clamp(46px,6vw,80px);margin:22px 0 20px}
+.hero h1 span{color:var(--orange)}
+.hero p{font-size:18px;color:#c9d3e3;max-width:46ch;margin-bottom:32px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.stats{position:relative;z-index:2;margin-top:-54px}
+.stats .box{background:#fff;border-radius:10px;box-shadow:0 20px 50px rgba(15,29,51,.14);display:grid;grid-template-columns:repeat(4,1fr)}
+.stats div div{padding:26px 28px;border-right:1px solid var(--line)}
+.stats div div:last-child{border:0}
+.stats b{display:block;font-size:30px;font-weight:800;letter-spacing:-.02em}
+.stats span{color:var(--mute);font-size:14px}
+.sec{padding:100px 0}
+.sec h2{font-size:clamp(36px,4.4vw,56px);margin-top:12px;max-width:18ch}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+.svc{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;transition:.2s}
+.svc:hover{box-shadow:0 14px 34px rgba(15,29,51,.1);transform:translateY(-2px)}
+.svc .ph{aspect-ratio:16/10}
+.svc .t{padding:24px}
+.svc h3{font-size:21px;margin-bottom:6px}
+.svc p{color:var(--mute);font-size:15px}
+.emer{background:var(--orange);color:#fff}
+.emer .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-top:40px;padding-bottom:40px}
+.emer h2{font-size:clamp(28px,3.4vw,42px)}
+.emer p{opacity:.9;margin-top:4px}
+.emer .btn{background:var(--navy);color:#fff}
+.why{background:var(--soft)}
+.why .wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.why .ph{aspect-ratio:5/6;border-radius:10px}
+.pts{margin-top:34px;display:grid;gap:24px}
+.pt{display:grid;grid-template-columns:48px 1fr;gap:16px}
+.pt b{width:48px;height:48px;border-radius:8px;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:800}
+.pt h3{font-size:19px;margin-bottom:2px}
+.pt p{color:var(--mute);font-size:15px}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.rev{border:1px solid var(--line);border-radius:10px;padding:28px}
+.stars{color:#f2a516;letter-spacing:3px;margin-bottom:12px}
+.rev p{font-size:16.5px}
+.rev cite{display:block;margin-top:14px;color:var(--mute);font-size:14px;font-style:normal}
+.area{background:var(--navy);color:#fff;padding:90px 0}
+.area h2{font-size:clamp(34px,4vw,52px);margin:12px 0 28px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips span{border:1px solid rgba(255,255,255,.22);padding:9px 16px;border-radius:99px;font-size:14.5px}
+.area .bot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,.14);color:#c3cee0}
+@media (max-width:960px){header nav{display:none}.hero .ph{inset:0;opacity:.45}.services,.reviews{grid-template-columns:1fr 1fr}.why .wrap{grid-template-columns:1fr}.stats .box{grid-template-columns:1fr 1fr}.stats div div:nth-child(2){border-right:0}}
+@media (max-width:600px){.services,.reviews{grid-template-columns:1fr}.hcall{display:none}}
+
+</style>
+</head>
+<body>
+<div class="ts" role="note"><div class="wrap"><span>Sample website by Teqnikal Studios. This business is fictional.</span><a href="https://teqnikalstudios.com/#contact">Get a site like this &rarr;</a></div></div>
+
+<header><div class="wrap">
+  <a class="brand" href="#"><span class="mk">MC</span><span><b>Motor City Mechanical</b><small>Heating &middot; Cooling &middot; Plumbing</small></span></a>
+  <nav><a href="#services">Services</a><a href="#why">Why us</a><a href="#reviews">Reviews</a><a href="#area">Service area</a></nav>
+  <a class="btn btn-orange demo hcall" href="#">Call (313) 555-0142</a>
+</div></header>
+
+<section class="hero">
+  <div class="ph"><img src="https://images.unsplash.com/photo-1676210134190-3f2c0d5cf58d?auto=format&fit=crop&w=1600&q=72" alt="Technician servicing a water heater" loading="eager" decoding="async" onerror="this.style.opacity=0"></div>
+  <div class="wrap"><div class="in">
+    <span class="pill">Family owned &middot; Licensed and insured in Michigan</span>
+    <h1>No heat? No problem. <span>We're on the way.</span></h1>
+    <p>Furnace, AC and plumbing repair for Metro Detroit homes. Upfront pricing, same-day service and a tech who cleans up before leaving.</p>
+    <div class="ctas"><a class="btn btn-orange demo" href="#">Book a service call</a><a class="btn btn-ghost demo" href="#">Free estimate</a></div>
+  </div></div>
+</section>
+
+<div class="stats"><div class="wrap"><div class="box">
+  <div><b>24/7</b><span>Emergency service</span></div>
+  <div><b>4.9 &#9733;</b><span>Average customer rating</span></div>
+  <div><b>20+ yrs</b><span>Serving Detroit</span></div>
+  <div><b>$0</b><span>Diagnostic with repair</span></div>
+</div></div></div>
+
+<section class="sec" id="services"><div class="wrap">
+  <span class="eyebrow">What we do</span>
+  <h2>Heating, cooling and plumbing, done right the first time.</h2>
+  <div class="services">
+    <div class="svc"><div class="ph"><img src="https://images.unsplash.com/photo-1770625467384-304e461ef1be?auto=format&fit=crop&w=800&q=72" alt="Hand adjusting a digital thermostat" loading="lazy" decoding="async" onerror="this.style.opacity=0"></div><div class="t"><h3>Furnace &amp; AC</h3><p>Repairs, tune-ups and high-efficiency systems sized for your home.</p></div></div>
+    <div class="svc"><div class="ph"><img src="https://images.unsplash.com/photo-1676210134188-4c05dd172f89?auto=format&fit=crop&w=800&q=72" alt="Plumber working on a pipe in a wall" loading="lazy" decoding="async" onerror="this.style.opacity=0"></div><div class="t"><h3>Leak repair</h3><p>Pipes, fixtures and sump pumps fixed before the damage spreads.</p></div></div>
+    <div class="svc"><div class="ph"><img src="https://images.unsplash.com/photo-1749532125405-70950966b0e5?auto=format&fit=crop&w=800&q=72" alt="Plumber repairing bathroom plumbing" loading="lazy" decoding="async" onerror="this.style.opacity=0"></div><div class="t"><h3>Drain cleaning</h3><p>Clogs, backups and sewer line camera inspections.</p></div></div>
+    <div class="svc"><div class="ph"><img src="https://images.unsplash.com/photo-1676210134050-6f12c6898395?auto=format&fit=crop&w=800&q=72" alt="Plumber in red gloves working on a toilet" loading="lazy" decoding="async" onerror="this.style.opacity=0"></div><div class="t"><h3>Fixture installs</h3><p>Toilets, faucets and garbage disposals installed the same day.</p></div></div>
+    <div class="svc"><div class="ph"><img src="https://images.unsplash.com/photo-1761758674188-2b8e4c89c5e2?auto=format&fit=crop&w=800&q=72" alt="Red valve with a pressure gauge" loading="lazy" decoding="async" onerror="this.style.opacity=0"></div><div class="t"><h3>Water heaters</h3><p>Tank and tankless installs, flushes and same-day replacements.</p></div></div>
+    <div class="svc"><div class="ph"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=72" alt="Technician holding a tool" loading="lazy" decoding="async" onerror="this.style.opacity=0"></div><div class="t"><h3>Maintenance plans</h3><p>Two tune-ups a year, priority booking and 15% off repairs.</p></div></div>
+  </div>
+</div></section>
+
+<section class="emer"><div class="wrap"><div><h2>Emergency? We answer 24/7.</h2><p>Burst pipe or no heat at 2 a.m.? A real person picks up.</p></div><a class="btn demo" href="#">Call (313) 555-0142</a></div></section>
+
+<section class="sec why" id="why"><div class="wrap">
+  <div class="ph"><img src="https://images.unsplash.com/photo-1676210133055-eab6ef033ce3?auto=format&fit=crop&w=1100&q=72" alt="Plumber working on pipes under a cabinet" loading="lazy" decoding="async" onerror="this.style.opacity=0"></div>
+  <div>
+    <span class="eyebrow">Why Motor City Mechanical</span>
+    <h2>The contractor your neighbors already trust.</h2>
+    <div class="pts">
+      <div class="pt"><b>01</b><div><h3>Upfront pricing</h3><p>You approve the price before we start. No surprises on the bill.</p></div></div>
+      <div class="pt"><b>02</b><div><h3>On-time arrival</h3><p>We text when your tech is on the way, with their photo and name.</p></div></div>
+      <div class="pt"><b>03</b><div><h3>Clean work</h3><p>Shoe covers on, drop cloths down, and we haul away the old equipment.</p></div></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec" id="reviews"><div class="wrap">
+  <span class="eyebrow">Reviews</span>
+  <h2>What homeowners say.</h2>
+  <div class="reviews">
+    <div class="rev"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Furnace quit on the coldest night of the year. They were here in an hour and had it running before midnight.&rdquo;</p><cite>Sample review &middot; Dearborn</cite></div>
+    <div class="rev"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Clear quote, no upsell, and the new water heater went in the same day.&rdquo;</p><cite>Sample review &middot; Ferndale</cite></div>
+    <div class="rev"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;The maintenance plan pays for itself. They remind me and just show up.&rdquo;</p><cite>Sample review &middot; Detroit</cite></div>
+  </div>
+</div></section>
+
+<section class="area" id="area"><div class="wrap">
+  <span class="eyebrow">Service area</span>
+  <h2>Proudly serving Metro Detroit.</h2>
+  <div class="chips"><span>Detroit</span><span>Dearborn</span><span>Ferndale</span><span>Royal Oak</span><span>Southfield</span><span>Warren</span><span>Livonia</span><span>Grosse Pointe</span><span>Hamtramck</span><span>Troy</span></div>
+  <div class="bot"><span>(313) 555-0142 &middot; Open 24/7 for emergencies</span><a class="btn btn-orange demo" href="#">Request my estimate</a></div>
+</div></section>
+
+<div class="credit"><div class="wrap"><span>&copy; 2026 Motor City Mechanical. Sample business. Photos via Unsplash.</span><span>Website by <a href="https://teqnikalstudios.com/">Teqnikal Studios</a></span></div></div>
+<div class="note" id="note" role="status" aria-live="polite">This is a sample site. On a real site this calls or books a service visit.</div>
+<script>
+document.querySelectorAll('.demo').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var n=document.getElementById('note');n.classList.add('show');clearTimeout(n.t);n.t=setTimeout(function(){n.classList.remove('show')},3200)})});
+</script>
+</body>
+</html>

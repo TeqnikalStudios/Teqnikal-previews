@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Corktown Cuts | Sample website by Teqnikal Studios</title>
+<meta name="description" content="A sample barbershop website built by Teqnikal Studios. Corktown Cuts is a fictional business.">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600&display=swap">
+<style>
+*{box-sizing:border-box}
+.btn{white-space:nowrap}
+html{scroll-behavior:smooth}
+body{margin:0;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+p,h1,h2,h3,h4{margin:0}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.ph{position:relative;overflow:hidden;background:var(--ph,#ddd)}
+.ph img{width:100%;height:100%;object-fit:cover;transition:opacity .3s}
+.ts{background:#0a0a0a;color:#f2f2f2;font:500 12.5px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif}
+.ts .wrap{display:flex;justify-content:space-between;gap:12px;padding-top:9px;padding-bottom:9px}
+.ts a{font-weight:600;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.note{position:fixed;left:50%;bottom:24px;transform:translate(-50%,16px);opacity:0;pointer-events:none;background:#111;color:#fff;padding:12px 18px;border-radius:8px;font:500 14px/1.4 system-ui,sans-serif;max-width:calc(100% - 32px);transition:.25s;z-index:50;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.note.show{opacity:1;transform:translate(-50%,0)}
+.credit{font:13px/1.5 system-ui,sans-serif}
+.credit .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:22px;padding-bottom:22px}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+@media (max-width:640px){.ts .wrap{font-size:11.5px}}
+
+.credit{background:#080808;color:#77736c}
+
+:root{--bg:#0e0e0f;--panel:#161617;--line:#2a2a2d;--gold:#cfa34a;--gold-d:#b48a33;--text:#f1eee7;--mute:#9b978f;--ph:#1d1d1f}
+body{background:var(--bg);color:var(--text);font:16px/1.6 'Space Grotesk',system-ui,sans-serif}
+h1,h2,h3{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;letter-spacing:.02em;line-height:.92}
+.btn{display:inline-flex;align-items:center;padding:15px 26px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid transparent;transition:.2s}
+.btn-gold{background:var(--gold);color:#121212}.btn-gold:hover{background:#e0b65c}
+.btn-line{border-color:rgba(241,238,231,.4)}.btn-line:hover{border-color:var(--gold);color:var(--gold)}
+.eyebrow{font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:600}
+header{position:absolute;left:0;right:0;z-index:5}
+header .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:26px;padding-bottom:26px}
+.brand{font:400 30px/1 'Bebas Neue',sans-serif;letter-spacing:.06em;text-decoration:none}
+.brand span{color:var(--gold)}
+header nav{display:flex;gap:30px;font-size:14px}
+header nav a{text-decoration:none;color:rgba(241,238,231,.75)}header nav a:hover{color:var(--gold)}
+.hero{position:relative;min-height:92vh;display:flex;align-items:flex-end}
+.hero .ph{position:absolute;inset:0}
+.hero .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(14,14,15,1) 0%,rgba(14,14,15,.55) 45%,rgba(14,14,15,.35) 100%)}
+.hero .wrap{position:relative;width:100%;padding-top:150px;padding-bottom:90px}
+.hero h1{font-size:clamp(76px,12vw,170px);margin:14px 0 18px}
+.hero h1 span{color:var(--gold)}
+.hero p{max-width:46ch;color:rgba(241,238,231,.8);font-size:18px;margin-bottom:32px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap}
+.ticker div{display:inline-block;padding:18px 0;animation:tk 30s linear infinite;font:400 24px 'Bebas Neue',sans-serif;letter-spacing:.08em;color:var(--mute)}
+.ticker i{font-style:normal;color:var(--gold);margin:0 22px}
+@keyframes tk{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ticker div{animation:none}}
+.sec{padding:110px 0}
+.sec h2{font-size:clamp(54px,7vw,96px);margin-top:12px}
+.menu{display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:start}
+.menu .ph{aspect-ratio:4/5;position:sticky;top:24px}
+.prices{margin-top:36px}
+.p{display:grid;grid-template-columns:1fr auto;gap:4px 24px;padding:20px 0;border-bottom:1px solid var(--line)}
+.p h3{font-size:32px}
+.p b{font:400 32px/1 'Bebas Neue',sans-serif;color:var(--gold)}
+.p span{grid-column:1/-1;color:var(--mute);font-size:15px}
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:280px 280px;gap:14px}
+.gallery .ph:first-child{grid-row:1/3}
+.gallery .ph:nth-child(4){grid-column:2/4}
+.crew{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+.barber{background:var(--panel);border:1px solid var(--line);padding:32px}
+.mono{width:72px;height:72px;border:1px solid var(--gold);display:grid;place-items:center;font:400 40px/1 'Bebas Neue',sans-serif;color:var(--gold);margin-bottom:22px}
+.barber h3{font-size:38px}
+.barber p{color:var(--mute);margin:6px 0 20px}
+.barber a{color:var(--gold);font-weight:600;font-size:14.5px;text-decoration:none;border-bottom:1px solid var(--gold-d);padding-bottom:2px}
+.book{position:relative;padding:120px 0;text-align:center}
+.book .ph{position:absolute;inset:0}
+.book .ph::after{content:"";position:absolute;inset:0;background:rgba(14,14,15,.8)}
+.book .wrap{position:relative}
+.book h2{font-size:clamp(54px,7vw,96px);margin:12px 0 16px}
+.book p{color:rgba(241,238,231,.8);max-width:46ch;margin:0 auto 30px}
+.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;padding-top:80px;padding-bottom:80px;border-top:1px solid var(--line)}
+.visit h3{font-size:30px;color:var(--gold);margin-bottom:10px}
+.visit p{color:var(--mute)}
+@media (max-width:900px){header nav{display:none}.menu,.visit{grid-template-columns:1fr}.menu .ph{position:static}.crew{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr;grid-template-rows:220px 220px 220px}.gallery .ph:first-child{grid-row:auto;grid-column:1/3}.gallery .ph:nth-child(4){grid-column:auto}}
+
+</style>
+</head>
+<body>
+<div class="ts" role="note"><div class="wrap"><span>Sample website by Teqnikal Studios. This business is fictional.</span><a href="https://teqnikalstudios.com/#contact">Get a site like this &rarr;</a></div></div>
+
+<header><div class="wrap"><a class="brand" href="#">Corktown <span>Cuts</span></a>
+<nav><a href="#menu">Services</a><a href="#crew">Barbers</a><a href="#visit">Visit</a></nav>
+<a class="btn btn-gold demo" href="#">Book now</a></div></header>
+
+<section class="hero">
+  <div class="ph"><img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=2000&q=72" alt="Black leather barber chair in front of a brick wall" loading="eager" decoding="async" onerror="this.style.opacity=0"></div>
+  <div class="wrap">
+    <span class="eyebrow">Est. 2014 &middot; Corktown, Detroit</span>
+    <h1>Sharp cuts.<br><span>Good company.</span></h1>
+    <p>Classic cuts, skin fades and hot towel shaves from barbers who take their time. Walk in, or book online in 30 seconds.</p>
+    <div class="ctas"><a class="btn btn-gold demo" href="#">Book a chair</a><a class="btn btn-line" href="#menu">See prices</a></div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div>Skin fades<i>&#10022;</i>Beard trims<i>&#10022;</i>Hot towel shaves<i>&#10022;</i>Kids cuts<i>&#10022;</i>Walk-ins welcome<i>&#10022;</i>Skin fades<i>&#10022;</i>Beard trims<i>&#10022;</i>Hot towel shaves<i>&#10022;</i>Kids cuts<i>&#10022;</i>Walk-ins welcome<i>&#10022;</i>Skin fades<i>&#10022;</i>Beard trims<i>&#10022;</i>Hot towel shaves<i>&#10022;</i>Kids cuts<i>&#10022;</i>Walk-ins welcome<i>&#10022;</i>Skin fades<i>&#10022;</i>Beard trims<i>&#10022;</i>Hot towel shaves<i>&#10022;</i>Kids cuts<i>&#10022;</i>Walk-ins welcome<i>&#10022;</i></div></div>
+
+<section class="sec" id="menu"><div class="wrap menu">
+  <div class="ph"><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1000&q=72" alt="Barber trimming a client's hair with a straight razor" loading="lazy" decoding="async" onerror="this.style.opacity=0"></div>
+  <div>
+    <span class="eyebrow">Services and prices</span>
+    <h2>The menu.</h2>
+    <div class="prices">
+      <div class="p"><h3>Classic cut</h3><b>$35</b><span>Scissor or clipper cut, styled and finished.</span></div>
+      <div class="p"><h3>Skin fade</h3><b>$40</b><span>Detailed fade with a razor-sharp line-up.</span></div>
+      <div class="p"><h3>Beard trim</h3><b>$20</b><span>Shape, line and hot towel finish.</span></div>
+      <div class="p"><h3>Hot towel shave</h3><b>$40</b><span>Straight razor, warm lather, two towels.</span></div>
+      <div class="p"><h3>Cut and beard</h3><b>$55</b><span>The full treatment, start to finish.</span></div>
+      <div class="p"><h3>Kids cut</h3><b>$25</b><span>Ages 12 and under.</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section style="padding-bottom:110px"><div class="wrap gallery">
+  <div class="ph"><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1200&q=72" alt="Client relaxing in a barber chair" loading="lazy" decoding="async" onerror="this.style.opacity=0"></div>
+  <div class="ph"><img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=700&q=72" alt="Clippers, scissors and a comb on a slate board" loading="lazy" decoding="async" onerror="this.style.opacity=0"></div>
+  <div class="ph"><img src="https://images.unsplash.com/photo-1657105052497-f996284ffff8?auto=format&fit=crop&w=700&q=72" alt="Barber using thinning shears and a comb" loading="lazy" decoding="async" onerror="this.style.opacity=0"></div>
+  <div class="ph"><img src="https://images.unsplash.com/photo-1647140655214-e4a2d914971f?auto=format&fit=crop&w=1200&q=72" alt="Barber cutting a client's hair with scissors" loading="lazy" decoding="async" onerror="this.style.opacity=0"></div>
+</div></section>
+
+<section class="sec" id="crew" style="padding-top:0"><div class="wrap">
+  <span class="eyebrow">The crew</span>
+  <h2>Meet your barber.</h2>
+  <div class="crew">
+    <div class="barber"><div class="mono">M</div><h3>Marcus</h3><p>Owner. Fades and classic cuts.</p><a class="demo" href="#">Book Marcus &rarr;</a></div>
+    <div class="barber"><div class="mono">D</div><h3>Dee</h3><p>Shaves, beards and designs.</p><a class="demo" href="#">Book Dee &rarr;</a></div>
+    <div class="barber"><div class="mono">J</div><h3>Jay</h3><p>Textured cuts and kids cuts.</p><a class="demo" href="#">Book Jay &rarr;</a></div>
+  </div>
+</div></section>
+
+<section class="book">
+  <div class="ph"><img src="https://images.unsplash.com/photo-1781455793310-8427c96454c7?auto=format&fit=crop&w=2000&q=72" alt="Barbershop interior with chairs and mirrors" loading="lazy" decoding="async" onerror="this.style.opacity=0"></div>
+  <div class="wrap">
+    <span class="eyebrow">Online booking</span>
+    <h2>Pick a time. Skip the wait.</h2>
+    <p>Choose your barber and your service, and get a text reminder before your appointment.</p>
+    <a class="btn btn-gold demo" href="#">Book online</a>
+  </div>
+</section>
+
+<div class="wrap visit" id="visit">
+  <div><h3>Hours</h3><p>Tue to Fri: 10 a.m. to 7 p.m.<br>Sat: 9 a.m. to 5 p.m.<br>Sun and Mon: Closed</p></div>
+  <div><h3>Location</h3><p>Corktown, Detroit<br>Free parking behind the shop</p></div>
+  <div><h3>Contact</h3><p>(313) 555-0193<br>Walk-ins welcome</p></div>
+</div>
+
+<div class="credit"><div class="wrap"><span>&copy; 2026 Corktown Cuts. Sample business. Photos via Unsplash.</span><span>Website by <a href="https://teqnikalstudios.com/">Teqnikal Studios</a></span></div></div>
+<div class="note" id="note" role="status" aria-live="polite">This is a sample site. On a real site this button opens online booking.</div>
+<script>
+document.querySelectorAll('.demo').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var n=document.getElementById('note');n.classList.add('show');clearTimeout(n.t);n.t=setTimeout(function(){n.classList.remove('show')},3200)})});
+</script>
+</body>
+</html>
