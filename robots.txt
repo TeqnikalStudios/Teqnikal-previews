@@ -2,5 +2,6 @@ User-agent: *
 Allow: /$
 Disallow: /smokers-only-garden-city/
 Disallow: /studios/
+Disallow: /demos/
 
 Sitemap: https://teqnikalstudios.com/sitemap.xml
