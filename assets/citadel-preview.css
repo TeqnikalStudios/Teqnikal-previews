@@ -1,0 +1,47 @@
+.citadel-preview {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid #634050;
+  border-radius: .8rem;
+  background: #10101b;
+  box-shadow: 0 24px 70px #09060b80;
+}
+.citadel-caption, .citadel-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .45rem 1rem;
+  padding: 1rem clamp(.8rem, 2vw, 1.35rem);
+}
+.citadel-caption strong { color: #fff0f0; letter-spacing: .2em; }
+.citadel-caption span, .citadel-footer span { color: #cbb9c8; font-size: .75rem; }
+.citadel-caption span { letter-spacing: .08em; }
+.citadel-stage {
+  overflow: hidden;
+  padding-block: clamp(.3rem, 2vw, 1.2rem);
+  background: radial-gradient(ellipse at 49% 49%, #3d233c, #151322 64%, #10101a);
+  perspective: 900px;
+}
+.citadel-stage svg { display: block; width: 100%; height: auto; transform-origin: 50% 65%; }
+.citadel-stage[data-active="true"] svg { animation: citadel-arrival 3.8s cubic-bezier(.15,.7,.25,1) both; }
+.citadel-route { fill: none; stroke: #f688a6; stroke-opacity: .6; stroke-width: 1.3; stroke-dasharray: 3 5; }
+.citadel-beacon { stroke: #ff909e; stroke-width: 1.3; }
+.citadel-beacon-light, .citadel-traffic { fill: #ffc2cb; filter: drop-shadow(0 0 6px #ff5a85); }
+.citadel-traffic-west { fill: #a9f8ff; filter: drop-shadow(0 0 6px #65deff); }
+.citadel-stage[data-active="true"] .citadel-traffic-east { animation: citadel-east 3.4s ease-in-out both; }
+.citadel-stage[data-active="true"] .citadel-traffic-west { animation: citadel-west 3.9s ease-in-out both; }
+.citadel-footer { border-top: 1px solid #503447; }
+.citadel-footer a { color: #ffd2da; font-size: .82rem; text-underline-offset: .24em; }
+.citadel-footer a:focus-visible { outline: 2px solid #ffd2da; outline-offset: 4px; }
+@keyframes citadel-arrival {
+  from { transform: translateY(14%) rotateX(23deg) rotateY(-17deg) scale(.85); opacity: .42; }
+  to { transform: none; opacity: 1; }
+}
+@keyframes citadel-east { to { transform: translate(178px, 81px); } }
+@keyframes citadel-west { to { transform: translate(-181px, -82px); } }
+@media (prefers-reduced-motion: reduce) {
+  .citadel-stage[data-active="true"] svg,
+  .citadel-stage[data-active="true"] .citadel-traffic { animation: none; }
+}
