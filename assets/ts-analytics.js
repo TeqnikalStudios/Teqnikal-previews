@@ -9,7 +9,7 @@
   window.__tsAnalytics = true;
 
   var CONTACT_ENDPOINT = 'n8n.teqnikalstudios.com/webhook/teqnikal-contact';
-  var NEED_OPTIONS = ['A new website', 'Website management', 'Business automation', 'TEQNIKAL OS demo', 'Something custom'];
+  var NEED_OPTIONS = ['A new website', 'Website pricing', 'Website management', 'Business automation', 'TEQNIKAL OS demo', 'Something custom'];
   var lastNeed = 'unknown';
 
   function track(name, params) {
