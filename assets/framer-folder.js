@@ -4,35 +4,35 @@
   "use strict";
 
   var DEMOS = [
-    { brand: "Birchwood Lane", kind: "Remodeling", city: "Ferndale", label: "Whole-home remodeling · Ferndale, MI",
+    { brand: "Birchwood Lane", url: "https://capable-reflect-369603.framer.app/", kind: "Remodeling", city: "Ferndale", label: "Whole-home remodeling · Ferndale, MI",
       h: "Older homes, rebuilt to live in now.", sub: "Kitchens, baths and full gut renovations for the 1920s bungalows and colonials of south Oakland County.",
       cta: "Start a project", cta2: "See the work", svc: ["Kitchens", "Bathrooms", "Whole-home"],
       font: "'Young Serif',Georgia,serif", bg: "#F4F0E9", ink: "#2B231D", ac: "#56664A", on: "#F4F0E9", art: "arch" },
-    { brand: "Copperline Electric", kind: "Electrical", city: "Livonia", label: "Licensed electricians · Livonia, MI",
+    { brand: "Copperline Electric", url: "https://faithful-assumptions-280767.framer.app/", kind: "Electrical", city: "Livonia", label: "Licensed electricians · Livonia, MI",
       h: "Power you don’t have to think about.", sub: "Panel upgrades, EV chargers and generator installs, done right the first time and inspected.",
       cta: "Book a visit", cta2: "Our services", svc: ["Panels", "EV chargers", "Generators"],
       font: "'Unbounded',Arial,sans-serif", fw: 700, ls: "-0.03em", bg: "#F3F3EF", ink: "#121417", ac: "#F5D000", on: "#121417", art: "bolt" },
-    { brand: "Northbound", kind: "HVAC", city: "Dearborn", label: "Heating & air · Dearborn, MI",
+    { brand: "Northbound", url: "https://charismatic-software-239713.framer.app/", kind: "HVAC", city: "Dearborn", label: "Heating & air · Dearborn, MI",
       h: "Warm by dinnertime. Cool by the weekend.", sub: "Same-day furnace and AC repair, honest replacement quotes and plans that keep it running.",
       cta: "Schedule service", cta2: "Get a quote", svc: ["Furnaces", "Cooling", "Maintenance"],
       font: "'Bricolage Grotesque',Arial,sans-serif", fw: 700, ls: "-0.04em", bg: "#F2F5F7", ink: "#0D1B2A", ac: "#C9431A", on: "#FFFFFF", art: "sun" },
-    { brand: "Ridgeview Homes", kind: "Home builder", city: "Northville", label: "Custom home builder · Northville, MI",
+    { brand: "Ridgeview Homes", url: "https://sustained-task-541456.framer.app/", kind: "Home builder", city: "Northville", label: "Custom home builder · Northville, MI",
       h: "Built for the next forty years.", sub: "Custom homes on your lot or ours, with a fixed price and a schedule you can hold us to.",
       cta: "Plan your home", cta2: "Floor plans", svc: ["Custom homes", "Floor plans", "Lots"],
       font: "'DM Serif Display',Georgia,serif", bg: "#F5F2EC", ink: "#1E2320", ac: "#2C4A3B", on: "#F5F2EC", art: "roof" },
-    { brand: "Halfmoon Coffee", kind: "Coffee shop", city: "Hamtramck", label: "Coffee & bakery · Hamtramck, MI",
+    { brand: "Halfmoon Coffee", url: "https://lucky-methods-123685.framer.app/", kind: "Coffee shop", city: "Hamtramck", label: "Coffee & bakery · Hamtramck, MI",
       h: "Good coffee, slow mornings.", sub: "Small-batch roasts, cardamom buns and a long table by the window. Order ahead or stay a while.",
       cta: "Order ahead", cta2: "See the menu", svc: ["Coffee", "Bakery", "Beans"],
       font: "'Caprasimo',Georgia,serif", ls: "-0.01em", bg: "#F4ECE1", ink: "#2A1B14", ac: "#B4532A", on: "#F4ECE1", art: "moon" },
-    { brand: "Hale & Fenkell", kind: "Commercial GC", city: "Detroit", label: "Commercial general contractor · Est. 1987",
+    { brand: "Hale & Fenkell", url: "https://inexpensive-insurance-541454.framer.app/", kind: "Commercial GC", city: "Detroit", label: "Commercial general contractor · Est. 1987",
       h: "We build the buildings Detroit works in.", sub: "Offices, clinics, schools and logistics space, delivered on a schedule you can plan around.",
       cta: "Request a quote", cta2: "Projects", svc: ["Offices", "Healthcare", "Industrial"],
       font: "'Big Shoulders Display',Impact,sans-serif", fw: 800, ls: "-0.01em", up: true, bg: "#0F1012", ink: "#E9E6DF", ac: "#FF5B14", on: "#0F1012", art: "beams", dark: true },
-    { brand: "Chair No. 7", kind: "Barbershop", city: "Ferndale", label: "Barbershop · Woodward Ave, Ferndale",
+    { brand: "Chair No. 7", url: "https://thoughtful-habits-018200.framer.app/", kind: "Barbershop", city: "Ferndale", label: "Barbershop · Woodward Ave, Ferndale",
       h: "Clean lines. No rush.", sub: "Seven chairs, five barbers and a waiting bench that’s worth the wait. Book a chair in a minute.",
       cta: "Book a chair", cta2: "Prices", svc: ["Cuts", "Fades", "Hot towel shave"],
       font: "'Gloock',Georgia,serif", bg: "#141312", ink: "#EFE9DF", ac: "#C8231E", on: "#EFE9DF", art: "pole", dark: true },
-    { brand: "Form & Fringe", kind: "Hair salon", city: "Royal Oak", label: "Hair salon · Royal Oak, MI",
+    { brand: "Form & Fringe", url: "https://centered-reassurance-115025.framer.app/", kind: "Hair salon", city: "Royal Oak", label: "Hair salon · Royal Oak, MI",
       h: "Hair that grows out beautifully.", sub: "Precision cuts, lived-in colour and curl care from a team of six. Every first visit starts with a consult.",
       cta: "Book a consult", cta2: "Our stylists", svc: ["Cuts", "Colour", "Curl care"],
       font: "'Bodoni Moda',Georgia,serif", fw: 500, ls: "-0.02em", bg: "#FBF8F5", ink: "#2A2523", ac: "#D8B1A8", on: "#2A2523", art: "wave" }
@@ -94,6 +94,7 @@
       '<div class="tqf-foot"><p class="tqf-note"></p><div class="tqf-nav2">' +
       '<button type="button" data-step="-1" aria-label="Previous concept">&larr;</button>' +
       '<button type="button" data-step="1" aria-label="Next concept">&rarr;</button>' +
+      '<a class="tqf-live" target="_blank" rel="noopener">View live site <span aria-hidden="true">&#8599;</span></a>' +
       '<a class="button tqf-go" href="#contact">Want one like this? <span aria-hidden="true">&rarr;</span></a></div></div></div></div>';
     return sec;
   }
@@ -117,6 +118,7 @@
     var view = modal.querySelector(".tqf-view");
     var url = modal.querySelector(".tqf-url");
     var note = modal.querySelector(".tqf-note");
+    var live = modal.querySelector(".tqf-live");
     var current = 0, lastFocus = null;
 
     if ("IntersectionObserver" in window) {
@@ -151,7 +153,9 @@
       var d = DEMOS[current];
       view.innerHTML = site(d, true);
       url.textContent = pad(current + 1) + " / " + pad(DEMOS.length) + "  ·  " + d.brand + "  ·  " + d.kind + ", " + d.city;
-      note.innerHTML = "Concept site for a fictional business, built in Framer by TEQNIKAL Studios. <b>Live preview coming soon.</b>";
+      note.textContent = "Concept site for a fictional business, built in Framer by TEQNIKAL Studios.";
+      live.href = d.url;
+      live.setAttribute("aria-label", "View the live " + d.brand + " concept site (opens in a new tab)");
     }
     function open(i, from) {
       lastFocus = from || document.activeElement;
