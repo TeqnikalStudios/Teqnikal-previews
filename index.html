@@ -1,36 +1,581 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"/>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-91Y0TM5JYW"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-91Y0TM5JYW');
 </script>
-<script src="/assets/ts-analytics.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="description" content="TEQNIKAL Studios builds websites and automates lead intake and follow-ups for businesses across the U.S. Based in Metro Detroit. Request a website preview."/><meta name="theme-color" content="#111111"/><title>Website Design &amp; Business Automation | TEQNIKAL Studios</title>
-<link rel="canonical" href="https://teqnikalstudios.com/"/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="https://teqnikalstudios.com/"/>
-<meta property="og:title" content="Website Design &amp; Business Automation | TEQNIKAL Studios"/>
-<meta property="og:description" content="TEQNIKAL Studios builds websites and automates lead intake and follow-ups for businesses across the U.S. Based in Metro Detroit. Request a website preview."/>
-  <script type="module" crossorigin src="/assets/index-pricing-enquiry.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-ix-5IXsq.css">
-  <link rel="stylesheet" href="/assets/studio-mission.css">
-  <link rel="stylesheet" href="/assets/citadel-preview.css">
-  <style>
-    @font-face {
-      font-family: "Orbitron";
-      src: url("/assets/orbitron-variable.ttf") format("truetype");
-      font-style: normal;
-      font-weight: 400 900;
-      font-display: swap;
-    }
+<script src="assets/ts-analytics.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="TEQNIKAL Studios builds websites and automates lead intake and follow-ups for businesses across the U.S. Based in Metro Detroit. Request a website preview.">
+<meta name="theme-color" content="#111111">
+<title>Website Design &amp; Business Automation | TEQNIKAL Studios</title>
+<link rel="canonical" href="https://teqnikalstudios.com/">
+<link rel="icon" type="image/png" href="favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://teqnikalstudios.com/">
+<meta property="og:title" content="Website Design &amp; Business Automation | TEQNIKAL Studios">
+<meta property="og:description" content="TEQNIKAL Studios builds websites and automates lead intake and follow-ups for businesses across the U.S. Based in Metro Detroit. Request a website preview.">
+<meta property="og:image" content="https://teqnikalstudios.com/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+@font-face { font-family: "Orbitron"; src: url("assets/orbitron-variable.ttf") format("truetype"); font-style: normal; font-weight: 400 900; font-display: swap; }
+:root {
+  --ink: #111; --paper: #fafaf8; --bg: #f1f0ec; --mute: #66655f; --line: rgba(17,17,17,.12);
+  --red: #c8323a; --glass: rgba(255,255,255,.7); --shadow: 0 40px 80px -40px rgba(17,17,17,.45);
+  --mono: "IBM Plex Mono", ui-monospace, monospace; --sans: Archivo, Arial, sans-serif;
+  --head: 68px; --foot: 44px; --ease: cubic-bezier(.2,.75,.2,1);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { font-family: var(--sans); color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; line-height: 1.55; overflow-x: hidden; }
+a { color: inherit; }
+img { display: block; max-width: 100%; height: auto; }
+:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
+.pattern { position: fixed; inset: 0; z-index: -1; background: url(assets/pattern.png) 0 0 / 295px 156px; opacity: .28; pointer-events: none; }
+.pattern::after { content: ""; position: absolute; inset: 0; background: radial-gradient(1200px 700px at 75% 40%, rgba(255,255,255,.0), rgba(241,240,236,.75)); }
+.skip { position: absolute; left: -999px; top: 8px; background: #fff; padding: 8px 12px; z-index: 50; }
+.skip:focus { left: 8px; }
+.eyebrow { font: 500 11px/1.4 var(--mono); letter-spacing: .22em; text-transform: uppercase; color: var(--mute); margin: 0; }
+.eyebrow b { color: var(--red); font-weight: 500; }
 
-    #root h1 {
-      font-family: "Orbitron", sans-serif;
-      overflow-wrap: anywhere;
+/* Header (logo unchanged from the current site) */
+header { position: sticky; top: 0; z-index: 30; height: var(--head); background: #111; color: #fff; display: flex; align-items: center; gap: 28px; padding: 0 5.5%; }
+.brand { display: flex; align-items: center; gap: 12px; min-width: 210px; text-decoration: none; color: #fff; }
+.brand img { height: 40px; width: 46px; object-fit: contain; }
+.brand span { font-size: 19px; font-weight: 800; letter-spacing: 2px; line-height: 1; }
+.brand small { display: block; font-family: var(--mono); font-weight: 400; font-size: 9px; letter-spacing: 5px; margin-top: 5px; }
+nav.tabs { margin-left: auto; display: flex; gap: 4px; position: relative; }
+nav.tabs a { position: relative; padding: 9px 16px; font-size: 14px; text-decoration: none; color: rgba(255,255,255,.72); border-radius: 999px; transition: color .3s; }
+nav.tabs a:hover, nav.tabs a[aria-current="page"] { color: #fff; }
+nav.tabs a[aria-current="page"]::after { content: ""; position: absolute; left: 50%; bottom: 1px; width: 5px; height: 5px; margin-left: -2.5px; background: var(--red); transform: rotate(45deg); }
+.cta-top { display: inline-flex; align-items: center; gap: 10px; height: 40px; padding: 0 18px; background: #fff; color: #111; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 999px; transition: transform .3s var(--ease), box-shadow .3s; }
+.cta-top:hover { transform: translateY(-1px); box-shadow: 0 8px 20px -8px rgba(255,255,255,.5); }
+
+/* Stage + views */
+main { overflow-x: clip; position: relative; perspective: 1800px; perspective-origin: 50% 20%; }
+.view { min-height: calc(100svh - var(--head) - var(--foot)); padding: clamp(28px, 5vh, 56px) 5.5%; display: grid; align-content: center; transform-origin: 50% 0; }
+.view[hidden] { display: none; }
+.view.is-in { animation: viewIn .75s var(--ease) both; }
+@keyframes viewIn { from { opacity: 0; transform: translate3d(0, 24px, -140px) rotateX(7deg); filter: blur(4px); } to { opacity: 1; transform: none; filter: none; } }
+.wrap { min-width: 0; width: 100%; max-width: 1240px; margin: 0 auto; }
+h1, h2, h3 { margin: 0; letter-spacing: -.02em; text-wrap: balance; }
+h1 { font-family: "Orbitron", var(--sans); font-weight: 700; font-size: clamp(34px, 4.6vw, 64px); line-height: 1.04; letter-spacing: -.01em; }
+h2 { font-size: clamp(30px, 3.4vw, 46px); line-height: 1.04; font-weight: 700; }
+.lede { font-size: clamp(16px, 1.35vw, 19px); color: #3b3a36; max-width: 40ch; margin: 18px 0 0; }
+
+/* Buttons */
+.btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.button { display: inline-flex; align-items: center; gap: 12px; height: 50px; padding: 0 24px; border-radius: 999px; background: #111; color: #fff; font-weight: 600; font-size: 15px; text-decoration: none; border: 0; cursor: pointer; font-family: inherit; box-shadow: 0 16px 30px -16px rgba(17,17,17,.7); transition: transform .35s var(--ease), box-shadow .35s; }
+.button:hover { transform: translateY(-2px); box-shadow: 0 22px 36px -16px rgba(17,17,17,.75); }
+.button .ar { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--red); font-size: 12px; }
+.ghost { display: inline-flex; align-items: center; height: 50px; padding: 0 22px; border-radius: 999px; border: 1px solid rgba(17,17,17,.25); text-decoration: none; font-weight: 600; font-size: 15px; background: rgba(255,255,255,.4); backdrop-filter: blur(6px); transition: background .3s, border-color .3s; }
+.ghost:hover { background: #fff; border-color: #111; }
+
+/* HOME */
+.home { display: grid; grid-template-columns: 1.02fr 1fr; gap: clamp(24px, 4vw, 64px); align-items: center; }
+.home .eyebrow { margin-bottom: 22px; }
+.pillars { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: clamp(28px, 6vh, 56px); border-top: 1px solid var(--line); }
+.pillars div { padding: 16px 16px 0 0; }
+.pillars div + div { padding-left: 16px; border-left: 1px solid var(--line); }
+.pillars em { font: normal 500 10px var(--mono); letter-spacing: .2em; color: var(--red); }
+.pillars strong { display: block; font-size: 16px; margin-top: 4px; }
+.pillars span { display: block; font-size: 13px; color: var(--mute); line-height: 1.45; margin-top: 2px; }
+
+.scene { position: relative; height: clamp(340px, 58vh, 540px); perspective: 1400px; }
+.rig { position: absolute; inset: 0; transform-style: preserve-3d; transform: rotateX(var(--rx, 10deg)) rotateY(var(--ry, -16deg)); transition: transform .9s var(--ease); }
+.geo { position: absolute; left: 50%; top: 50%; width: 92%; aspect-ratio: 1; transform: translate3d(-50%, -50%, -180px); animation: spin 60s linear infinite; }
+.geo path { fill: none; stroke: #111; stroke-opacity: .16; stroke-width: 1; vector-effect: non-scaling-stroke; }
+.geo path.r { stroke: var(--red); stroke-opacity: .55; }
+@keyframes spin { to { transform: translate3d(-50%, -50%, -180px) rotate(360deg); } }
+.orbit { position: absolute; left: 50%; top: 50%; width: 78%; aspect-ratio: 1; margin: -39% 0 0 -39%; border-radius: 50%; border: 1px solid rgba(200,50,58,.45); transform: rotateX(74deg) translateZ(-40px); transform-style: preserve-3d; animation: orbit 14s linear infinite; }
+.orbit::before { content: ""; position: absolute; top: -6px; left: 50%; width: 12px; height: 12px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #ff8f8a, var(--red)); box-shadow: 0 0 18px rgba(200,50,58,.8); }
+@keyframes orbit { to { transform: rotateX(74deg) translateZ(-40px) rotateZ(360deg); } }
+.win { position: absolute; left: 50%; top: 50%; width: 48%; margin: 0; transform-style: preserve-3d; transform: translate(-50%, -50%) translate3d(var(--x), var(--y), var(--z)) rotateY(var(--r)); text-decoration: none; color: inherit; }
+.win > div { border-radius: 12px; overflow: hidden; background: #fff; box-shadow: var(--shadow), 0 0 0 1px rgba(17,17,17,.06); animation: bob 7s ease-in-out infinite; animation-delay: var(--d); transition: transform .5s var(--ease); }
+.win:hover > div { transform: translateZ(40px); }
+@keyframes bob { 50% { translate: 0 -12px; } }
+.bar { display: flex; align-items: center; gap: 5px; height: 24px; padding: 0 10px; background: #111; color: #fff; }
+.bar i { width: 7px; height: 7px; border-radius: 50%; background: #4a4a4a; }
+.bar i:first-child { background: var(--red); }
+.bar span { margin-left: auto; font: 500 9px var(--mono); letter-spacing: .18em; text-transform: uppercase; opacity: .8; }
+.win img { width: 100%; aspect-ratio: 1.44; object-fit: cover; object-position: top; }
+.w1 { --x: -40%; --y: -24%; --z: -80px; --r: 0deg; --d: -2s; }
+.w2 { --x: 0%; --y: 22%; --z: 50px; --r: 0deg; --d: 0s; }
+.w3 { --x: 44%; --y: -14%; --z: -150px; --r: 0deg; --d: -4s; }
+.scene-tag { position: absolute; left: 0; bottom: -6px; font: 500 10px var(--mono); letter-spacing: .2em; color: var(--mute); }
+
+/* PACKAGES */
+.head-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: end; margin-bottom: clamp(20px, 4vh, 36px); }
+.head-row > p { margin: 0; color: var(--mute); max-width: 48ch; justify-self: end; }
+.head-row .eyebrow { margin-bottom: 12px; }
+.tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; perspective: 1600px; }
+.tier { position: relative; display: flex; flex-direction: column; padding: 22px; border-radius: 20px; background: var(--glass); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,.9); box-shadow: var(--shadow); transform-style: preserve-3d; transform: rotateX(var(--tx, 0deg)) rotateY(var(--ty, 0deg)); transition: transform .5s var(--ease), box-shadow .5s; }
+.tier:hover { box-shadow: 0 50px 90px -40px rgba(17,17,17,.55); }
+.tier.dark { background: rgba(17,17,17,.92); color: #fff; border-color: rgba(255,255,255,.08); }
+.tier.dark .eyebrow, .tier.dark .t-sub, .tier.dark li { color: rgba(255,255,255,.66); }
+.tier-top { display: flex; justify-content: space-between; align-items: baseline; }
+.tier-top .num { font: 500 11px var(--mono); color: var(--red); letter-spacing: .2em; }
+.tier h3 { font-size: 26px; margin-top: 6px; }
+.t-sub { margin: 4px 0 0; font-size: 14px; color: var(--mute); min-height: 2.9em; }
+.fan { position: relative; height: 136px; margin: 16px 0 14px; border: 0; padding: 0; background: none; cursor: pointer; width: 100%; transform-style: preserve-3d; }
+.fan img { position: absolute; left: 50%; top: 6px; width: 56%; aspect-ratio: 1.44; object-fit: cover; object-position: top; border-radius: 8px; box-shadow: 0 18px 30px -14px rgba(17,17,17,.5), 0 0 0 1px rgba(17,17,17,.08); transform: translateX(-50%) translateX(calc(var(--o) * 34%)) translateZ(calc(var(--a) * -30px)) rotate(calc(var(--o) * 5deg)); transition: transform .6s var(--ease); background: #ddd; }
+.fan img:nth-child(1) { --o: -1; --a: 1; }
+.fan img:nth-child(2) { --o: 1; --a: 1; }
+.fan img:nth-child(3) { --o: 0; --a: 0; z-index: 2; }
+.tier:hover .fan img { transform: translateX(-50%) translateX(calc(var(--o) * 52%)) translateY(calc(var(--a) * 6px - 8px)) translateZ(calc(var(--a) * -10px)) rotate(calc(var(--o) * 8deg)); }
+.fan-label { position: absolute; right: 0; bottom: 0; font: 500 10px var(--mono); letter-spacing: .16em; text-transform: uppercase; background: #111; color: #fff; padding: 6px 10px; border-radius: 999px; z-index: 3; transform: translateZ(30px); }
+.tier.dark .fan-label { background: #fff; color: #111; }
+.tier ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; font-size: 14px; }
+.tier li { position: relative; padding-left: 18px; color: #33322e; }
+.tier li::before { content: ""; position: absolute; left: 2px; top: .58em; width: 6px; height: 6px; border: 1px solid var(--red); transform: rotate(45deg); }
+.tier-foot { margin-top: auto; padding-top: 18px; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.tier-foot .price { font: 500 11px var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--mute); }
+.tier.dark .price { color: rgba(255,255,255,.6); }
+.tier-foot a { font-size: 14px; font-weight: 600; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 1px; }
+.note { margin: 18px 0 0; font-size: 13px; color: var(--mute); text-align: center; }
+
+/* SERVICES */
+.svc-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(24px, 4vw, 60px); align-items: center; }
+.svc-list { margin-top: 24px; border-top: 1px solid var(--line); }
+.svc-row { display: grid; grid-template-columns: 44px 1fr; gap: 6px 10px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.svc-row em { font: normal 500 11px var(--mono); color: var(--red); letter-spacing: .2em; padding-top: 4px; }
+.svc-row strong { font-size: 18px; }
+.svc-row span { grid-column: 2; font-size: 14px; color: var(--mute); }
+.side { display: grid; gap: 18px; }
+.process { padding: 22px; border-radius: 20px; background: var(--glass); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,.9); box-shadow: var(--shadow); }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 16px; position: relative; }
+.steps::before { content: ""; position: absolute; left: 6px; right: 6px; top: 6px; height: 1px; background: linear-gradient(90deg, var(--red), rgba(17,17,17,.2)); }
+.step { position: relative; padding-top: 24px; }
+.step::before { content: ""; position: absolute; left: 0; top: 0; width: 11px; height: 11px; background: #fff; border: 1px solid var(--red); transform: rotate(45deg); }
+.step strong { display: block; font-size: 15px; }
+.step span { display: block; font-size: 13px; color: var(--mute); line-height: 1.45; margin-top: 4px; }
+.os { position: relative; overflow: hidden; padding: 24px; border-radius: 20px; background: #111; color: #fff; box-shadow: var(--shadow); }
+.os .eyebrow { color: rgba(255,255,255,.6); }
+.os h3 { font-size: 24px; margin: 8px 0 6px; }
+.os p:not(.eyebrow) { margin: 0; max-width: 40ch; font-size: 14px; color: rgba(255,255,255,.7); }
+.os a { display: inline-block; margin-top: 14px; font-size: 14px; font-weight: 600; text-decoration: none; border-bottom: 1px solid currentColor; }
+.os-cube { position: absolute; right: 34px; top: 50%; width: 76px; height: 76px; margin-top: -38px; transform-style: preserve-3d; animation: cube 18s linear infinite; }
+.os-cube i { position: absolute; inset: 0; border: 1px solid rgba(255,255,255,.35); background: rgba(200,50,58,.08); }
+.os-cube i:nth-child(1) { transform: translateZ(38px); } .os-cube i:nth-child(2) { transform: rotateY(180deg) translateZ(38px); }
+.os-cube i:nth-child(3) { transform: rotateY(90deg) translateZ(38px); } .os-cube i:nth-child(4) { transform: rotateY(-90deg) translateZ(38px); }
+.os-cube i:nth-child(5) { transform: rotateX(90deg) translateZ(38px); border-color: var(--red); } .os-cube i:nth-child(6) { transform: rotateX(-90deg) translateZ(38px); }
+@keyframes cube { from { transform: rotateX(-24deg) rotateY(0); } to { transform: rotateX(-24deg) rotateY(360deg); } }
+
+/* CONTACT */
+.contact { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(24px, 5vw, 72px); align-items: center; }
+.direct { margin-top: 26px; display: grid; gap: 10px; }
+.direct a, .direct button { display: inline-flex; align-items: center; gap: 10px; width: fit-content; font-size: 17px; font-weight: 600; text-decoration: none; }
+.direct button { font: 500 11px var(--mono); letter-spacing: .14em; text-transform: uppercase; background: none; border: 1px solid var(--line); border-radius: 999px; padding: 7px 12px; cursor: pointer; color: var(--mute); }
+form { padding: clamp(20px, 3vw, 30px); border-radius: 22px; background: var(--glass); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,.9); box-shadow: var(--shadow); display: grid; gap: 12px; }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+label { display: grid; gap: 5px; font: 500 10px var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--mute); }
+input, select, textarea { font: 400 15px var(--sans); color: var(--ink); padding: 11px 13px; border-radius: 12px; border: 1px solid rgba(17,17,17,.16); background: rgba(255,255,255,.85); width: 100%; transition: border-color .25s, box-shadow .25s; }
+input:focus, select:focus, textarea:focus { outline: none; border-color: #111; box-shadow: 0 0 0 4px rgba(200,50,58,.12); }
+textarea { resize: vertical; min-height: 74px; }
+.form-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+#f-status { font-size: 14px; color: var(--mute); }
+
+/* Gallery dialog */
+.dlg { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; padding: 20px; perspective: 1600px; }
+.dlg[hidden] { display: none; }
+.scrim { position: absolute; inset: 0; background: rgba(17,17,17,.62); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); opacity: 0; transition: opacity .3s; }
+.panel { position: relative; width: min(980px, 100%); max-height: calc(100svh - 40px); overflow: auto; padding: 24px; border-radius: 22px; background: var(--paper); box-shadow: 0 60px 120px -40px rgba(0,0,0,.6); opacity: 0; transform: translateY(40px) rotateX(12deg) scale(.96); transform-origin: 50% 100%; transition: transform .5s var(--ease), opacity .3s; }
+.dlg.is-in .scrim { opacity: 1; }
+.dlg.is-in .panel { opacity: 1; transform: none; }
+.panel-head { display: flex; justify-content: space-between; align-items: start; gap: 16px; margin-bottom: 18px; }
+.panel-head h3 { font-size: 26px; margin-top: 6px; }
+.x { flex: none; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: #fff; font-size: 20px; cursor: pointer; }
+.x:hover { background: #111; color: #fff; }
+.gal { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 14px; }
+.gal a { display: block; text-decoration: none; border-radius: 14px; overflow: hidden; background: #fff; box-shadow: 0 0 0 1px var(--line); transition: transform .4s var(--ease), box-shadow .4s; }
+.gal a:hover { transform: translateY(-4px); box-shadow: 0 24px 40px -22px rgba(17,17,17,.5), 0 0 0 1px var(--line); }
+.gal img { width: 100%; aspect-ratio: 1.44; object-fit: cover; object-position: top; background: #e8e7e2; }
+.gal div { padding: 12px 14px 14px; }
+.gal small { font: 500 10px var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--mute); }
+.gal strong { display: block; font-size: 16px; margin-top: 2px; }
+.gal p { margin: 4px 0 0; font-size: 13px; color: var(--mute); line-height: 1.45; }
+.disclaim { margin: 16px 0 0; font-size: 12px; color: var(--mute); }
+
+footer { height: var(--foot); display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 5.5%; font: 400 11px var(--mono); letter-spacing: .12em; color: var(--mute); }
+footer a { text-decoration: none; border-bottom: 1px solid var(--line); }
+
+@media (max-width: 1040px) {
+  .brand { min-width: 0; }
+  nav.tabs a { padding: 9px 11px; }
+  .home, .svc-grid, .contact { grid-template-columns: 1fr; }
+  .scene { height: 300px; order: -1; }
+  .head-row { grid-template-columns: 1fr; }
+  .head-row p { justify-self: start; }
+}
+@media (max-width: 820px) {
+  :root { --head: 60px; }
+  header { gap: 12px; padding: 0 16px; }
+  .brand img { width: 36px; height: 32px; }
+  .brand span { font-size: 16px; }
+  .brand small { font-size: 8px; }
+  .cta-top { display: none; }
+  nav.tabs { position: fixed; left: 50%; bottom: max(14px, env(safe-area-inset-bottom)); transform: translateX(-50%); margin: 0; padding: 5px; background: rgba(17,17,17,.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: 999px; box-shadow: 0 20px 40px -16px rgba(0,0,0,.6); z-index: 40; }
+  nav.tabs a { padding: 10px 14px; font-size: 13px; }
+  nav.tabs a[aria-current="page"] { background: #fff; color: #111; }
+  nav.tabs a[aria-current="page"]::after { display: none; }
+  .view { padding: 24px 16px 96px; align-content: start; min-height: calc(100svh - var(--head)); }
+  .scene { height: 210px; margin: 0 0 4px; }
+  .geo { width: 70%; }
+  .gal { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .gal p { display: none; }
+  .panel { padding: 18px; }
+  .win { width: 44%; }
+  .w1 { --x: -52%; --y: -20%; }
+  .w2 { --x: 0%; --y: 12%; }
+  .w3 { --x: 52%; --y: -14%; }
+  .bar { height: 18px; }
+  .bar span { font-size: 7px; }
+  .pillars { grid-template-columns: 1fr; }
+  .pillars div, .pillars div + div { padding: 12px 0; border-left: 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 34px 1fr; }
+  .pillars span { grid-column: 2; }
+  .pillars strong { margin: 0; }
+  .tiers { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 86%; overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 -16px; padding: 6px 16px 24px; scrollbar-width: none; }
+  .tiers::-webkit-scrollbar { display: none; }
+  .tier { scroll-snap-align: center; transform: none !important; }
+  .steps { grid-template-columns: 1fr; }
+  .steps::before { left: 5px; right: auto; top: 6px; bottom: 6px; width: 1px; height: auto; }
+  .step { padding: 0 0 0 26px; }
+  .os-cube { display: none; }
+  .row2 { grid-template-columns: 1fr; }
+  footer { height: auto; padding: 0 16px 90px; flex-direction: column; align-items: start; gap: 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+<div class="pattern" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <a class="brand" href="#home" aria-label="Teqnikal Studios home"><img src="assets/logo.png" alt=""><span>TEQNIKAL<small>STUDIOS</small></span></a>
+  <nav class="tabs" aria-label="Main">
+    <a href="#home">Home</a>
+    <a href="#packages">Packages</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a class="cta-top" href="#contact">Start a project <span aria-hidden="true">↗</span></a>
+</header>
+
+<main id="main">
+  <!-- HOME -->
+  <section class="view" id="home" aria-labelledby="home-title">
+    <div class="wrap home">
+      <div>
+        <p class="eyebrow">Detroit-based <b>·</b> Built for what's next</p>
+        <h1 id="home-title">AI is complicated. We make it work for you.</h1>
+        <p class="lede">Websites, automation and ongoing support for growing businesses, built faster with AI and approved by real people.</p>
+        <div class="btns">
+          <a class="button" href="#contact">Book a consultation <span class="ar" aria-hidden="true">↗</span></a>
+          <a class="ghost" href="#packages">See packages</a>
+        </div>
+        <div class="pillars">
+          <div><em>01</em><strong>Websites</strong><span>Custom design that feels right on every screen.</span></div>
+          <div><em>02</em><strong>Automation</strong><span>Enquiries and follow-ups that run on their own.</span></div>
+          <div><em>03</em><strong>Support</strong><span>Updates, hosting and one team to call.</span></div>
+        </div>
+      </div>
+      <div class="scene" id="scene" aria-hidden="true">
+        <div class="rig" id="rig">
+          <svg class="geo" viewBox="0 0 100 100"><path d="M50 4 96 84H4Z"/><path d="M50 22 80 74H20Z"/><path class="r" d="M50 40 65 66H35Z"/><path d="M50 4V40M96 84 65 66M4 84 35 66"/></svg>
+          <div class="orbit"></div>
+          <a class="win w1" href="#packages" tabindex="-1"><div><div class="bar"><i></i><i></i><i></i><span>Starter</span></div><img src="assets/tiers/summit.webp" alt="" width="576" height="400"></div></a>
+          <a class="win w2" href="#packages" tabindex="-1"><div><div class="bar"><i></i><i></i><i></i><span>Business</span></div><img src="assets/tiers/northbound.webp" alt="" width="576" height="400"></div></a>
+          <a class="win w3" href="#packages" tabindex="-1"><div><div class="bar"><i></i><i></i><i></i><span>Custom</span></div><img src="assets/tiers/stillline.webp" alt="" width="576" height="400"></div></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section class="view" id="packages" aria-labelledby="pk-title" hidden>
+    <div class="wrap">
+      <div class="head-row">
+        <div><p class="eyebrow">Packages <b>·</b> What to expect</p><h2 id="pk-title">Three ways to start.</h2></div>
+        <p>Every site is designed around your business. Tap a stack to see example sites for that package. We confirm scope and pricing together before any work begins.</p>
+      </div>
+      <div class="tiers">
+        <article class="tier" data-tier="starter">
+          <div class="tier-top"><p class="eyebrow">Starter</p><span class="num">01</span></div>
+          <h3>Landing page</h3>
+          <p class="t-sub">One focused page that turns visitors into calls and quote requests.</p>
+          <button class="fan" type="button" data-open="starter" aria-label="See Starter example sites"><img loading="lazy" src="assets/tiers/keys.webp" alt=""><img loading="lazy" src="assets/tiers/riverwalk.webp" alt=""><img loading="lazy" src="assets/tiers/summit.webp" alt=""><span class="fan-label">4 examples</span></button>
+          <ul><li>One page built around your business</li><li>Mobile-first and fast loading</li><li>Contact form sent to your inbox</li><li>Hosting, SSL and 1 update a month</li></ul>
+          <div class="tier-foot"><span class="price">Starting package</span><a href="#contact" data-need="Website pricing">Ask about pricing ↗</a></div>
+        </article>
+        <article class="tier" data-tier="business">
+          <div class="tier-top"><p class="eyebrow">Business</p><span class="num">02</span></div>
+          <h3>Multi-page website</h3>
+          <p class="t-sub">A full site for services, gallery, pricing and booking, built to be found.</p>
+          <button class="fan" type="button" data-open="business" aria-label="See Business example sites"><img loading="lazy" src="assets/tiers/form-fringe.webp" alt=""><img loading="lazy" src="assets/tiers/copperline.webp" alt=""><img loading="lazy" src="assets/tiers/northbound.webp" alt=""><span class="fan-label">6 examples</span></button>
+          <ul><li>Everything in Starter</li><li>Pages for each service, gallery and team</li><li>Booking, quote or order forms</li><li>Local SEO and Google Business Profile</li></ul>
+          <div class="tier-foot"><span class="price">Quoted to scope</span><a href="#contact" data-need="Website pricing">Ask about pricing ↗</a></div>
+        </article>
+        <article class="tier dark" data-tier="custom">
+          <div class="tier-top"><p class="eyebrow">Custom</p><span class="num">03</span></div>
+          <h3>Custom build</h3>
+          <p class="t-sub">Immersive, one-of-a-kind sites and platforms for brands that need to stand out.</p>
+          <button class="fan" type="button" data-open="custom" aria-label="See Custom example sites"><img loading="lazy" src="assets/tiers/hale-fenkell.webp" alt=""><img loading="lazy" src="assets/tiers/ridgeview.webp" alt=""><img loading="lazy" src="assets/tiers/stillline.webp" alt=""><span class="fan-label">4 examples</span></button>
+          <ul><li>3D and interactive design</li><li>Listings, portals, stores and web apps</li><li>Lead intake and follow-up automation</li><li>A dedicated manager and priority support</li></ul>
+          <div class="tier-foot"><span class="price">Quoted to scope</span><a href="#contact" data-need="Something custom">Plan a custom build ↗</a></div>
+        </article>
+      </div>
+      <p class="note">Add ongoing management to any package: updates, security, search and monthly reporting.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="view" id="services" aria-labelledby="sv-title" hidden>
+    <div class="wrap svc-grid">
+      <div>
+        <p class="eyebrow">What we do</p>
+        <h2 id="sv-title" style="margin-top:12px">Your business. Less busywork.</h2>
+        <div class="svc-list">
+          <div class="svc-row"><em>01</em><strong>Websites that move you forward</strong><span>Custom design, clear messaging and a site that feels right on every screen.</span></div>
+          <div class="svc-row"><em>02</em><strong>Automation that gives time back</strong><span>Connect enquiries, scheduling and follow-ups so fewer leads slip through.</span></div>
+          <div class="svc-row"><em>03</em><strong>A partner after launch</strong><span>Content updates, hosting and support, with a real person approving every change.</span></div>
+        </div>
+      </div>
+      <div class="side">
+        <div class="process">
+          <p class="eyebrow">The process</p>
+          <div class="steps">
+            <div class="step"><strong>Talk it through</strong><span>We learn what you do and what needs to work better.</span></div>
+            <div class="step"><strong>Make it yours</strong><span>We build a direction around your business, with your feedback.</span></div>
+            <div class="step"><strong>Launch and grow</strong><span>We go live, then stay on for updates and care.</span></div>
+          </div>
+        </div>
+        <div class="os">
+          <p class="eyebrow">TEQNIKAL OS <b>·</b> In development</p>
+          <h3>One place. Your next move.</h3>
+          <p>Our command center for lead research, website audits, call notes and follow-ups. Demo by request.</p>
+          <a href="#contact" data-need="TEQNIKAL OS demo">Request a demo ↗</a>
+          <div class="os-cube" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="view" id="contact" aria-labelledby="ct-title" hidden>
+    <div class="wrap contact">
+      <div>
+        <p class="eyebrow">Your next chapter starts here</p>
+        <h2 id="ct-title" style="margin-top:12px">Let's build something.</h2>
+        <p class="lede">Tell us what you're working on. We'll figure out the next step together.</p>
+        <div class="direct">
+          <a href="tel:+13134033083">(313) 403-3083</a>
+          <a href="mailto:hello@teqnikalstudios.com" id="direct-email">hello@teqnikalstudios.com</a>
+          <button type="button" id="copy-email">Copy email</button>
+        </div>
+      </div>
+      <form id="contact-form" novalidate>
+        <div class="row2">
+          <label>Your name<input name="name" autocomplete="name" required></label>
+          <label>Business<input name="business" autocomplete="organization"></label>
+        </div>
+        <div class="row2">
+          <label>Email address<input name="email" type="email" autocomplete="email" required></label>
+          <label>Phone (optional)<input name="phone" type="tel" autocomplete="tel"></label>
+        </div>
+        <label>What do you have in mind?
+          <select name="need" id="f-need">
+            <option>A new website</option>
+            <option>Website pricing</option>
+            <option>Website management</option>
+            <option>Business automation</option>
+            <option>TEQNIKAL OS demo</option>
+            <option>Something custom</option>
+          </select>
+        </label>
+        <label>A little about your project<textarea name="message" rows="3"></textarea></label>
+        <div class="form-foot">
+          <button class="button" type="submit">Send my enquiry <span class="ar" aria-hidden="true">↗</span></button>
+          <span id="f-status" role="status" aria-live="polite"></span>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>© 2026 Teqnikal Studios · Detroit roots. Forward thinking.</span>
+  <a href="contractor-website-design/">Contractor website design</a>
+</footer>
+
+<div class="dlg" id="dlg" role="dialog" aria-modal="true" aria-labelledby="dlg-title" hidden>
+  <div class="scrim" data-close></div>
+  <div class="panel">
+    <div class="panel-head">
+      <div><p class="eyebrow" id="dlg-eyebrow"></p><h3 id="dlg-title"></h3></div>
+      <button class="x" type="button" data-close aria-label="Close">×</button>
+    </div>
+    <div class="gal" id="gal"></div>
+    <p class="disclaim">Concept sites for fictional businesses, designed by TEQNIKAL Studios. Not client endorsements.</p>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Example sites for each package
+  var TIERS = {
+    starter: { label: 'Starter · Landing page', title: 'One focused page', items: [
+      ['Great Lakes Summit', 'Roofing', 'summit', 'samples/construction.html', 'A confident first impression built to turn local searches into quote requests.'],
+      ['Keys & Co.', 'Real estate', 'keys', 'samples/real-estate.html', 'Listings, local expertise and a simple way to start a conversation.'],
+      ['Riverwalk Kitchen', 'Restaurant', 'riverwalk', 'samples/riverwalk-kitchen/', 'Menu, hours and reservations on one easy page.'],
+      ['Lavender & Line', 'Hair salon', 'lavender', 'samples/lavender-and-line-salon/', 'Services and prices up front, with booking a tap away.']
+    ]},
+    business: { label: 'Business · Multi-page website', title: 'A full site, built to be found', items: [
+      ['Northbound Heating & Air', 'Trades', 'northbound', 'https://charismatic-software-239713.framer.app', 'Furnace and heat-pump prices posted up front, plus same-day calls.'],
+      ['Copperline Electric', 'Trades', 'copperline', 'https://faithful-assumptions-280767.framer.app', 'Panel upgrades, EV chargers and generators with flat rates listed.'],
+      ['Form & Fringe', 'Salon', 'form-fringe', 'https://centered-reassurance-115025.framer.app', 'Services, stylists and booking one tap apart.'],
+      ['Chair No. 7', 'Barbershop', 'chair-no7', 'https://thoughtful-habits-018200.framer.app', 'Cuts, prices and the book button ahead of everything else.'],
+      ['Halfmoon Coffee', 'Food & drink', 'halfmoon', 'https://lucky-methods-123685.framer.app', 'A menu and hours that read cleanly on a phone at 7am.'],
+      ['Birchwood Lane', 'Remodeling', 'birchwood', 'https://capable-reflect-369603.framer.app', 'Kitchens, baths and whole floors, with typical ranges by room.']
+    ]},
+    custom: { label: 'Custom · Custom build', title: 'One of a kind', items: [
+      ['Stillline Estates', 'Luxury real estate', 'stillline', 'https://earlier-someone-171527.framer.app/', 'A luxury brokerage with a property collection and inquiry flow.'],
+      ['Ridgeview Homes', 'Home builder', 'ridgeview', 'https://sustained-task-541456.framer.app', 'Floor plans, base prices and weekly photo updates.'],
+      ['Hale & Fenkell', 'Commercial GC', 'hale-fenkell', 'https://inexpensive-insurance-541454.framer.app', 'Finished buildings first, and a plain path from bid to closeout.'],
+      ['Corbel Build Co.', 'Remodeling', 'corbel', 'https://fierce-learning-959139.framer.app', 'Quiet, editorial and built around a line-item proposal.']
+    ]}
+  };
+
+  // Views
+  var ALIAS = { home: 'home', top: 'home', packages: 'packages', work: 'packages', pricing: 'packages', services: 'services', how: 'services', os: 'services', contact: 'contact' };
+  var views = document.querySelectorAll('.view');
+  var links = document.querySelectorAll('nav.tabs a');
+  var current = null;
+  function show(hash, focus) {
+    var id = ALIAS[(hash || '').replace('#', '')] || 'home';
+    if (id === current) return;
+    current = id;
+    views.forEach(function (v) {
+      var on = v.id === id;
+      v.hidden = !on;
+      v.classList.remove('is-in');
+      if (on && !reduce) { void v.offsetWidth; v.classList.add('is-in'); }
+    });
+    links.forEach(function (a) { if (a.getAttribute('href') === '#' + id) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
+    window.scrollTo(0, 0);
+    requestAnimationFrame(function () { window.scrollTo(0, 0); });
+    if (focus) { var h = document.querySelector('#' + id + ' h1, #' + id + ' h2'); if (h) { h.setAttribute('tabindex', '-1'); h.focus({ preventScroll: true }); } }
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="#"]');
+    if (!a) return;
+    var id = a.getAttribute('href').slice(1);
+    if (id === 'main') return;
+    if (!(id in ALIAS)) return;
+    e.preventDefault();
+    var need = a.getAttribute('data-need');
+    if (need) { var sel = document.getElementById('f-need'); if (sel) sel.value = need; }
+    try { history.pushState(null, '', '#' + ALIAS[id]); } catch (err) {}
+    show('#' + id, true);
+  });
+  window.addEventListener('popstate', function () { show(location.hash); });
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  show(location.hash);
+  window.addEventListener('load', function () { window.scrollTo(0, 0); });
+
+  // Hero parallax and tier tilt (desktop pointers only)
+  if (!reduce && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    var scene = document.getElementById('home'), rig = document.getElementById('rig'), raf = 0;
+    scene.addEventListener('pointermove', function (e) {
+      var x = e.clientX / window.innerWidth - .5, y = e.clientY / window.innerHeight - .5;
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(function () { rig.style.setProperty('--ry', (-16 + x * 18).toFixed(2) + 'deg'); rig.style.setProperty('--rx', (10 - y * 12).toFixed(2) + 'deg'); });
+    });
+    document.querySelectorAll('.tier').forEach(function (t) {
+      t.addEventListener('pointermove', function (e) {
+        var r = t.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+        t.style.setProperty('--ty', (x * 8).toFixed(2) + 'deg'); t.style.setProperty('--tx', (-y * 8).toFixed(2) + 'deg');
+      });
+      t.addEventListener('pointerleave', function () { t.style.removeProperty('--ty'); t.style.removeProperty('--tx'); });
+    });
+  }
+
+  // Example gallery
+  var dlg = document.getElementById('dlg'), gal = document.getElementById('gal'), last = null;
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function openTier(key, from) {
+    var t = TIERS[key]; if (!t) return;
+    last = from;
+    document.getElementById('dlg-eyebrow').textContent = t.label;
+    document.getElementById('dlg-title').textContent = t.title;
+    gal.innerHTML = t.items.map(function (i) {
+      var ext = /^https?:/.test(i[3]);
+      return '<a href="' + esc(i[3]) + '" target="_blank" rel="noopener"><img loading="lazy" src="assets/tiers/' + i[2] + '.webp" alt="" width="576" height="400"><div><small>' + esc(i[1]) + '</small><strong>' + esc(i[0]) + ' ↗</strong><p>' + esc(i[4]) + '</p></div></a>';
+    }).join('');
+    dlg.hidden = false;
+    document.body.style.overflow = 'hidden';
+    requestAnimationFrame(function () { requestAnimationFrame(function () { dlg.classList.add('is-in'); }); });
+    dlg.querySelector('.x').focus();
+  }
+  function closeTier() {
+    dlg.classList.remove('is-in');
+    document.body.style.overflow = '';
+    setTimeout(function () { dlg.hidden = true; }, reduce ? 0 : 300);
+    if (last) last.focus();
+  }
+  document.querySelectorAll('[data-open]').forEach(function (b) { b.addEventListener('click', function () { openTier(b.getAttribute('data-open'), b); }); });
+  dlg.addEventListener('click', function (e) { if (e.target.closest('[data-close]')) closeTier(); });
+  document.addEventListener('keydown', function (e) {
+    if (dlg.hidden) return;
+    if (e.key === 'Escape') closeTier();
+    if (e.key === 'Tab') {
+      var f = dlg.querySelectorAll('button, a[href]'), first = f[0], lastEl = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); lastEl.focus(); }
+      else if (!e.shiftKey && document.activeElement === lastEl) { e.preventDefault(); first.focus(); }
     }
-  </style>
-</head><body><div id="root"></div><nav aria-label="Industry services" style="background:#131313;color:#fff;text-align:center;padding:1rem"><a style="color:inherit;text-decoration:underline" href="/contractor-website-design/">Contractor website design</a></nav></body></html>
+  });
+
+  // Copy email
+  var copyBtn = document.getElementById('copy-email');
+  copyBtn.addEventListener('click', function () {
+    var done = function () { copyBtn.textContent = 'Copied'; setTimeout(function () { copyBtn.textContent = 'Copy email'; }, 1800); };
+    if (navigator.clipboard) navigator.clipboard.writeText('hello@teqnikalstudios.com').then(done, function () {});
+  });
+
+  // Contact form (same webhook and fields as before)
+  var form = document.getElementById('contact-form'), status = document.getElementById('f-status'), busy = false;
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    if (busy) return;
+    if (!form.checkValidity()) { status.textContent = 'Please add your name and a valid email.'; form.reportValidity(); return; }
+    var fd = new FormData(form), data = {};
+    ['name', 'business', 'email', 'phone', 'need', 'message'].forEach(function (k) { data[k] = String(fd.get(k) || '').trim(); });
+    busy = true; status.textContent = 'Sending…';
+    try {
+      var res = await fetch('https://n8n.teqnikalstudios.com/webhook/teqnikal-contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data), signal: AbortSignal.timeout(15000) });
+      if (!res.ok) throw new Error('Request failed');
+      var j = await res.json();
+      if (!(j && j.ok)) throw new Error('Request failed');
+      form.reset();
+      status.textContent = data.need === 'Website pricing' ? 'Thanks! We received your pricing request.' : 'Thanks! We got your request and will reach out soon.';
+    } catch (err) {
+      status.textContent = 'Something went wrong. Please call (313) 403-3083 or email hello@teqnikalstudios.com.';
+    } finally { busy = false; }
+  });
+})();
+</script>
+</body>
+</html>
