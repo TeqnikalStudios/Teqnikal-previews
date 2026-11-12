@@ -61,7 +61,7 @@ export function createCitadelPreview({ jsx, jsxs }, { useEffect, useRef }) {
       children: [
         jsxs("figcaption", {
           className: "citadel-caption",
-          children: [jsx("strong", { children: "CITADEL" }), jsx("span", { children: "TEQNIKAL OS · CONCEPT PREVIEW" })]
+          children: [jsx("strong", { children: "CITADEL" }), jsx("span", { children: "NEW SOFTWARE · IN DEVELOPMENT" })]
         }),
         jsx("div", {
           ref: stage,
